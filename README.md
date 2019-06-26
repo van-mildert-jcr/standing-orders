@@ -10,8 +10,3 @@ Suggested amendments should be submitted to Constitutional Committee.
 
 ## Editing
 You can use a text editor or LaTeX editor. [Overleaf](https://www.overleaf.com) is recommended as it does not require any new software to be installed and allows the compiled PDF to be displayed side-by-side with the source. Overleaf also has useful guides to writing with LaTeX.
-
-## Contributing
-Pull requests are welcome; however, all changes must got through the procedures set out in the Standing Orders.
-
-All contributions become the property of Van Mildert College Junior Common Room.
