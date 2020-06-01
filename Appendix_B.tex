@@ -1,23 +1,15 @@
 \documentclass[12pt]{article}  % Set font size to 12; article is default LaTeX doc type
-% \usepackage{helvet}  % Use Helvetica
 \usepackage[utf8]{inputenc}  % Set encoding; LaTeX default
-\usepackage[hidelinks]{hyperref}  % Table of contents links
 \renewcommand{\familydefault}{\sfdefault}  % Use sans serif font
 \usepackage{graphicx}  % To include coat of arms
 \graphicspath{ {./} }  % Graphics in same folder as this file
-\setlength{\parindent}{0pt}  % Disable indentation at start of paragraphs
-\setlength{\parskip}{1em}  % Paragraph spacing
 \usepackage[margin=1.2in]{geometry}  % Margins
-\renewcommand{\arraystretch}{1.5}  % Table padding
-\hyphenpenalty=10000  % Prevent hyphenation
-\emergencystretch \textwidth  % Fix spacing issues caused by lack of hyphenation
-% Set up numbering
-\usepackage{enumerate} 
+\usepackage{enumerate}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
 
 \title{Appendix B: Ratified Clubs and Societies}
 \author{Van~Mildert~College Junior~Common~Room}
 \date{27th November 2019}
-
 \begin{document}
 \begin{titlepage}  % Title page
 \maketitle
@@ -27,6 +19,7 @@
 \end{figure}
 \thispagestyle{empty}
 \end{titlepage}
+\setcounter{page}{2}  % Correct page numbering
 \section{Sports Clubs}
 \begin{enumerate}[]
     \item Van Mildert Badminton
