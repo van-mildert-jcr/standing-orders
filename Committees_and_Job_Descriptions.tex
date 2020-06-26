@@ -1,7 +1,11 @@
-\documentclass[12pt]{article}  % Set font size to 12; article is default LaTeX doc type
-% \usepackage{helvet}  % Use Helvetica
-\usepackage[utf8]{inputenc}  % Set encoding; LaTeX default
-\usepackage[hidelinks, pdfusetitle]{hyperref}  % Table of contents links
+% Set font size to 12; article is default LaTeX doc type and meets our purposes
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}  % Set encoding to Unicode
+\usepackage[
+    hidelinks, % Don't put boxes around links etc
+    pdfusetitle, % Use LaTeX fields to fill PDF metadata
+    pdflang={en-GB} % Set language (for accessibility)
+]{hyperref} % Handles PDF stuff including links/table of contents
 \renewcommand{\familydefault}{\sfdefault}  % Use sans serif font
 \usepackage{graphicx}  % To include coat of arms
 \graphicspath{ {./} }  % Graphics in same folder as this file
@@ -9,37 +13,37 @@
 \setlength{\parskip}{1em}  % Paragraph spacing
 \usepackage[margin=1.2in]{geometry}  % Margins
 \renewcommand{\arraystretch}{1.5}  % Table padding
-\hyphenpenalty=10000  % Prevent hyphenation
+\hyphenpenalty=10000  % Prevent hyphenation (LaTeX can be a bit overzealous)
 \emergencystretch \textwidth  % Fix spacing issues caused by lack of hyphenation
-% Set up numbering
-\usepackage{enumerate}
+% Numbering
+\usepackage{enumerate} % Lets us customise list styles
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumi}{\thesection.\arabic{enumi}.}  % Section number followed by item number for clauses
 \renewcommand{\labelenumii}{\theenumii}
 \renewcommand{\theenumii}{\theenumi\arabic{enumii}.}  % Subclauses
 % Disable subsection numbering
-\usepackage{titlesec}
-\renewcommand{\thesubsection}{}
-\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{}
+\usepackage{titlesec} % Lets us customise title styles
+\renewcommand{\thesubsection}{} % Remove number
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{} % Fix spacing caused by removing number
 
 
 \title{Committees and Job Descriptions}
 \author{Van~Mildert~College Junior~Common~Room}
-\date{April 2020}
+\date{26th June 2020}
 
 \begin{document}
 \begin{titlepage}  % Title page
-\maketitle
-\begin{figure}[h]
-\includegraphics[scale=0.25]{arms}  % Coat of arms
-\centering
-\end{figure}
-\thispagestyle{empty}
+    \maketitle
+    \begin{figure}[h]
+    \includegraphics[scale=0.25]{arms}  % Coat of arms
+    \centering
+    \end{figure}
+    \thispagestyle{empty}
 \end{titlepage}
 
 \setcounter{page}{2}  % Correct page numbering
 \section*{Introduction}
-These are the Committees and Job Descriptions Standing Orders of Van Mildert College Junior Common Room, approved on 26th April 2020.
+These are the Committees and Job Descriptions Standing Orders of Van Mildert College Junior Common Room, approved on 26th June 2020.
 
 This version was written by the Steering Committee of 2017-18:\\
 \hspace*{2cm}Georgina Robinson (JCR Chair) (HLM)\\
@@ -51,30 +55,30 @@ This version was written by the Steering Committee of 2017-18:\\
 Amended in October 2018 by the Executive Committee, Sheehan Quirke (JCR President) and Alastair Hargreaves-McManus.\\
 Amended in June 2019 by the Alastair Hargreaves-McManus, Sheehan Quirke (JCR President) and Sam Humphriss (Head of Technical Committee).\\
 Amended in November 2019 by Alastair Hargreaves-McManus (Webmaster) and Andrew Howell (Vice-President (Development)).\\
-Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Committee.
+Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Committee.\\
+Amended in June 2020 by the Executive Committee.
 \newpage
 \tableofcontents{}
 \newpage
-
 \section{The Executive Committee}
 \begin{enumerate}
     \item There are twelve members of the Executive Committee: the President (elected), nine Executive Officers (elected), the Chair (elected) and the Bar Steward (ex officio).
-    The President and other Executive Officers are freely voting members on the Executive Committee, the Chair can vote in accordance with clause \ref{Chair Vote} of this document, and the Bar Steward may not vote.
+    The President and other Executive Officers are freely voting members on the Executive Committee, the Chair can vote in accordance with the Operational Standing Orders, and the Bar Steward may not vote.
     \subsection{The President}
-    \item In addition to the requirements set out by the DSO Framework and the President’s employment contract, the responsibilities of the President include:
+    \item The responsibilities of the President include:
     \begin{enumerate}[(a)]
+        \item To lead the Executive Committee;
         \item To strive to fulfil the aims of the JCR as defined in the Standing Orders;
         \item To encourage participation in JCR activities;
         \item To ensure that the JCR is in a sound financial position for achieving its aims in future years;
         \item To do everything in their power not to jeopardise the position of the JCR;
         \item To act as a liaison between ordinary members of the JCR and the wider University;
-        \item To convene meetings of the Executive Committee;
         \item To be sufficiently welfare trained to be able to assist the Senior Welfare Officer in their responsibilities;
-        \item To oversee the running of the Pastoral phone and instant messaging service(s) during the advertised hours of the Easter term;
+        \item To oversee the running of the Pastoral phone and instant messaging service(s) during the advertised hours of the Easter Term;
         \item To be a member of the Board of Trustees.
     \end{enumerate}
+    \item The President's term of office is the academic year after they are elected.
     \item The President must be resident within College during their term of office.
-    \item The President may serve as a co-opted non-voting member of the Board of Trustees for one year after finishing their role.
     \subsection{The Financial and Commercial Services Officer}
     \item The responsibilities of the Financial and Commercial Services Officer (FACSO) include:
     \begin{enumerate}[(a)]
@@ -94,14 +98,14 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To oversee the collection of formal payments;
         \item To oversee the running of the JCR commercial services, including the shop, the gym, and Technical Committee;
         \item To ensure the Shop complies with required standards;
-        \item To hold ultimate responsibility for the actions of the Shop Committee, Gym Committee and the Tech Committee;
-        \item To appoint the head of the Shop Committee, the Gym Committee and the Tech Committee;
+        \item To hold ultimate responsibility for the actions of the Shop Committee, Gym Committee and the Technical Committee;
+        \item To appoint the head of the Shop Committee, the Gym Committee and the Technical Committee;
         \item To oversee the maintenance of the JCR website, including payment handler;
         \item To be a member of the Board of Trustees.
     \end{enumerate}
+    \item The FACSO's term of office is the academic year after they are elected.
     \item Following their term of office, a former Financial and Commercial Services Officer remains responsible for ensuring that the accounts for their term are complete and must attend any audit meetings if necessary.
     \item The Financial and Commercial Services Officer is guaranteed a room in College but is not required to accept it.
-    \item The Financial and Commercial Services Officer may serve as a co-opted non-voting member of the Board of Trustees for one year after finishing their role.
     \subsection{The Communications Officer}
     \item The responsibilities of the Communications Officer include:
     \begin{enumerate}[(a)]
@@ -116,6 +120,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To ensure the website is kept up to date;
         \item To ensure all JCR publications are not defamatory or otherwise likely to jeopardise the legal or moral standing of the JCR.
     \end{enumerate}
+    \item The term of office of the Communications Officer starts on the first day of Easter Term and ends on the last day of Easter vacation the following year.
     \subsection{The Events Officer}
     \item The responsibilities of the Events Officer include:
     \begin{enumerate}[(a)]
@@ -125,6 +130,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To liaise with College staff to ensure that any requirements demanded by University policies are met by JCR events.
     \end{enumerate}
     \item The Events Officer may sit on all JCR committees organising events.
+    \item The term of office of the Events Officer starts on first day of Summer vacation and ends on the last day of Easter Term the following year.
     \subsection{The Formals and Experiences Officer}
     \item The responsibilities of the Formals and Experiences Officer include:
     \begin{enumerate}[(a)]
@@ -137,6 +143,8 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To act as a liaison between current JCR members and College alumni;
         \item To advertise, on behalf of college or the JCR, opportunities that may benefit members' experience, including years abroad, bursaries and careers events.
     \end{enumerate}
+    \item The term of office of the Formals and Experiences Officer starts on the first day of Summer vacation and ends on the last day of Easter Term the following year.
+    \item The Formals and Experiences Officer-elect must organise the Mildert Day formal.
     \subsection{The International Officer}
     \item The responsibilities of the International Officer include:
     \begin{enumerate}[(a)]
@@ -147,6 +155,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To liaise with the Senior Freshers' Representative about the needs of international students and to organise Freshers' Week as necessary;
         \item To serve on the Welfare Campaigns team, in a role agreed with the Welfare Officer.
     \end{enumerate}
+    \item The term of office of the International Officer starts on the first day of Easter vacation and ends on the last day of Epiphany Term the following year.
     \subsection{The Outreach and Fundraising Officer}
     \item The responsibilities of the Outreach and Fundraising Officer include:
     \begin{enumerate}[(a)]
@@ -162,6 +171,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \end{enumerate}
     \item The Outreach and Fundraising Officer must sit on all committees organising outreach projects/schemes, unless they are applying to the committee.
     \item The Outreach and Fundraising Officer may sit on all committees organising fundraising events, unless they are applying to the committee.
+    \item The term of office of the Outreach and Fundraising Officer starts on the first day of Summer vacation and ends on the last day of Easter Term the following year.
     \subsection{The Senior Freshers’ Representative}
     \item The responsibilities of the Senior Freshers' Representative include:
     \begin{enumerate}[(a)]
@@ -173,6 +183,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To promote the College to prospective students;
         \item To ensure that the freshers’ sections of the website and other published materials are up to date.
     \end{enumerate}
+    \item The term of office of the Senior Freshers' Representative starts on the first day of Epiphany Term and ends on the last day of Christmas vacation the following year.
     \subsection{The Senior Welfare Officer}
     \item The responsibilities of the Senior Welfare Officer include:
     \begin{enumerate}[(a)]
@@ -184,7 +195,9 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To oversee the running of the Pastoral phone and instant messaging service(s) during the advertised hours during the Michaelmas Term and Epiphany Term;
         \item To coordinate and oversee the use of the Patterson room as the designated welfare room.
     \end{enumerate}
-    \item The Senior Welfare Officer is guaranteed a room in College but is not required to accept it.
+    \item The Senior Welfare Officer is guaranteed a room in College (for the academic year that makes up most of their term of office) but is not required to accept it.
+    \item The term of office of Senior Welfare Officer starts on the first day of Easter Term and ends on the last day of Easter vacation the following year.
+    \item During the Easter vacation, the Senior Welfare Officer-elect must work with the incumbent as part of the role handover.
     \subsection{The Sports and Societies Officer}
     \item The responsibilities of the Sports and Societies Officer include:
     \begin{enumerate}[(a)]
@@ -196,25 +209,32 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To organise clubs, societies, and committee photos;
         \item To ensure that all club and society heads are given appropriate support throughout the year.
     \end{enumerate}
+    \item The term of office of the Sports and Societies Officer starts on the first day of Summer vacation and ends on the last day of Easter Term the following year.
     \subsection{The Chair}
     \item The responsibilities of the Chair include:
     \begin{enumerate}[(a)]
         \item To chair all JCR meetings, where possible;
         \item To make rulings on interpretation of the Standing Orders as necessary;
-        \item To ensure the fair running of all JCR committees;
-        \item To ensure the fair running of all JCR elections;
-        \item To ensure the fair running of all JCR interviews;
+        \item To ensure the fair running of the JCR including elections, interviews, committees, clubs and societies;
         \item To convene and chair meetings of the Executive Committee.
     \end{enumerate}
-    \item The Chair must not chair interviews for committees that they are a member of or applying to be a member of, excluding the Constitutional Committee and the Freshers' Representatives Committee.
-    \item \label{Chair Vote}{} The Chair cannot vote in committees except to give a casting vote in accordance with the following principles:
-    \begin{enumerate}[(a)]
-        \item The Chair should vote to enable further discussion or investigation.
-        \item The Chair should vote to maintain the status quo where there is no majority in favour of change.
-    \end{enumerate}
-    \item The Chair does not count for the purposes of committee quorums.
+    \item The Chair's term of office starts on the first day of Summer vacation and ends on the last day of Easter Term the following year.
 \end{enumerate}
 \newpage
+
+
+\section{Elected Officers}
+\begin{enumerate}
+    \subsection{Student Trustees}
+    \item The responsibilities of the Student Trustees include:
+    \begin{enumerate}[(a)]
+        \item To be trustees of the CIO;
+        \item To represent the views of student members to the Board of Trustees;
+        \item To ensure student members are kept informed about the Board of Trustees.
+    \end{enumerate}
+    \item The term of office of the Student Trustees starts on the 1st February and ends on the 31st January the following year.
+\end{enumerate}
+
 
 \section{Appointed Officers}
 \begin{enumerate}
@@ -223,13 +243,12 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \begin{enumerate}[(a)]
         \item To deputise for the JCR Chair in interviews and meetings, where necessary;
         \item To assist the JCR Chair in their role, as necessary;
-        \item To take the minutes for Treasury Committee and Financial Auditing Committee meetings;
-        \item To appoint members to, and head, the Constitutional Committee.
+        \item To take the minutes or ensure that minutes are taken for Treasury Committee and Financial Auditing Committee meetings;
         \item To head Constitutional Committee;
         \item To ensure that the functions of Constitutional Committee are carried out;
         \item To represent Constitutional Committee and report to the JCR as necessary.
     \end{enumerate}
-    \item The Deputy Chair must not chair interviews for committees that they are a member of or applying to be a member of.
+    \item The Deputy Chair's term of office starts on the first day of Christmas vacation and ends on the last day of Michaelmas Term the following year.
     \subsection{The Shop Manager}
     \item The responsibilities of the Shop Manager include:
     \begin{enumerate}[(a)]
@@ -239,6 +258,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To oversee the distribution of stash;
         \item To assist in the maintenance of JCR-owned facilities including the vending machines and card machines, alongside the Financial and Commercial Services Officer.
     \end{enumerate}
+    \item The term of office of the Shop Manager starts on the first day of Summer vacation and ends on the last day of Easter Term the following year.
     \subsection{The Senior DSU Representative}
     \item The responsibilities of the Senior DSU Representative include:
     \begin{enumerate}[(a)]
@@ -256,6 +276,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \begin{enumerate}
         \item If the Senior DSU Representative is unwilling to follow such a mandate they must immediately resign.
     \end{enumerate}
+    \item The term of office of Senior DSU Representative starts on the first day of Summer vacation and ends on the last day of Easter term the following year.
     \subsection{Assistant Events Officers}
     \item The term “Assistant Events Officers” refers to both the Assistant Events Officer (External) and the Assistant Events Officer (Internal).
     \item The responsibilities of the Assistant Events Officers include:
@@ -263,6 +284,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To assist the Events Officer in their role;
         \item To deputise for the Events Officer where necessary.
     \end{enumerate}
+    \item The Assistant Events Officers' terms of office start on the first day of Summer vacation and end on the last day of Easter term the following year.
     \subsection{The DUCKtator}
     \item The responsibilities of the DUCKtator include:
     \begin{enumerate}[(a)]
@@ -270,8 +292,9 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To take responsibility for the fundraising activities of the committee;
         \item To co-ordinate DUCK events in the College, including DUCK week and Mr and Mrs Mildert.
     \end{enumerate}
+    \item The term of officer of the DUCKtator starts on the first day of Summer vacation and ends on the last day of Easter term the following year.
     \subsection{Outreach Directors}
-    \item The term “Outreach Directors” refers to the following positions:
+    \item\label{def:outreach-directors} The term “Outreach Directors” refers to the following positions:
     \begin{enumerate}[(a)]
         \item Carers Respite Committee Director
         \item Community Visiting Scheme Director
@@ -283,8 +306,9 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \item The (individual) responsibilities of the Outreach Directors include:
     \begin{enumerate}[(a)]
         \item To head the relevant outreach committee/project;
-        \item To report to the Outreach Officer as necessary.
+        \item To report to the Outreach and Fundraising Officer as necessary.
     \end{enumerate}
+    \item The terms of office of the Outreach Directors start on the first day of Summer vacation and end on the last day of Easter term the following year.
     \subsection{Talk and Support}
     \item The responsibilities of Head of Talk and Support Campaigns Committee include:
     \begin{enumerate}[(a)]
@@ -299,7 +323,8 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To manage the pastoral phone rota;
         \item To advise the Head of Talk and Support Campaigns Committee on campaigns where necessary.
     \end{enumerate}
-    \item The Head of Talk and Support Pastoral Committee must live in College during the term time of their term of office.
+    \item Each of the positions of Head of a Talk and Support Committee can be held jointly by two JCR members.
+    \item The terms of office of the Heads of Talk and Support Committees start on the first day of Summer vacation and end on the last day of Easter term the following year.
     \subsection{Head of Decorations Committee}
     \item The responsibilities of the Head of Decorations Committee include:
     \begin{enumerate}[(a)]
@@ -307,6 +332,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To ensure any decorations by Decorations Committee are safe and abide by relevant regulations;
         \item To be ultimately responsible for the work of Decorations Committee.
     \end{enumerate}
+    \item The term of office of the Head of Decorations Committee starts on their appointment in Michaelmas Term and ends on the last day of Easter term the following year.
     \subsection{The Head of Ball}
     \item The responsibilities of the Head of Ball include:
     \begin{enumerate}[(a)]
@@ -316,6 +342,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To oversee the finances and management of Ball Committee.
     \end{enumerate}
     \item The Head of Ball position may be held jointly by two JCR members.
+    \item The term of office of the Head of Ball starts on the first day of Summer vacation and ends on the last day of Easter term the following year.
     \subsection{The Head of Mildert Day}
     \item The responsibilities of the Head of Mildert Day include:
     \begin{enumerate}[(a)]
@@ -324,23 +351,47 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To oversee the finances and management of Mildert Day Committee.
     \end{enumerate}
     \item The Head of Mildert Day position may be held jointly by two JCR members.
+    \item The term of office of the Head of Mildert Day starts on their appointment in Michaelmas Term and ends on the last day of Easter Term.
     \subsection{The Head of VMCFS}
     \item The responsibilities of the Head of Van Mildert Charity Fashion Show (VMCFS) include:
     \begin{enumerate}[(a)]
         \item To head Fashion Show Committee;
-        \item To oversee the finances and management of Fashion Show Committee and the VMCFS;
-        \item To lead the VMCFS Executive.
+        \item To oversee the finances and management of Fashion Show Committee and the VMCFS.
     \end{enumerate}
     \item The Head of VMCFS position may be held jointly by two JCR members.
+    \item The term of office of the Head of VMCFS starts on the first day of Summer vacation and ends on the last day of Easter Term the following year.
+
+    \subsection{The Webmaster}
+    \item The responsibilities of the Webmaster include:
+    \begin{enumerate}[(a)]
+        \item To organise Website Committee;
+        \item To ensure that the JCR server is kept secure;
+        \item To be the G~Suite administrator;
+        \item To liaise with other officers and committees as necessary.
+    \end{enumerate}
+    \item The term of office of the Webmaster starts on the first day of Summer vacation and ends on the last day of Easter term the following year.
+
+    \subsection{Head of Gym}
+    \item The responsibilities of the Head of Gym include:
+    \begin{enumerate}[(a)]
+        \item Being head of Gym Committee;
+        \item Acting as a liaison for Gym Committee.
+    \end{enumerate}
+    \item The Head of Gym position may be held jointly by two JCR members.
+
+    \subsection{Head of Technical Committee}
+    \item The responsibilities of the Head of Technical Committee include:
+    \begin{enumerate}
+        \item To head Technical Committee;
+        \item To head Technical Productions Team;
+        \item To ensure the fair, safe and effective running of those committees.
+    \end{enumerate}
 \end{enumerate}
 \newpage
 
+
 \section{Committees}
 \begin{enumerate}
-    \item An open committee is one that any JCR member may join on request.
-    \begin{enumerate}
-        \item JCR committees are not open unless this is explicitly stated in the Standing Orders.
-    \end{enumerate}
     \subsection{Ball Committee}
     \item The functions of Ball Committee are:
     \begin{enumerate}[(a)]
@@ -351,6 +402,15 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To coordinate external companies and hired acts for balls;
         \item To regularly liaise with the relevant College Staff and JCR Officers.
     \end{enumerate}
+    \item The membership of Ball Committee is as follows:
+    \begin{enumerate}[(a)]
+        \item Head of Ball,
+        \item President,
+        \item Events Officer,
+        \item Formals and Experiences Officer, \emph{and}
+        \item Several ordinary committee members.
+    \end{enumerate}
+
     \subsection{Mildert Day Committee}
     \item The functions of Mildert Day Committee are:
     \begin{enumerate}[(a)]
@@ -358,18 +418,28 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To liaise with the JCR and College in the planning of Mildert Day;
         \item To support the Head of Mildert Day as necessary.
     \end{enumerate}
+    \item The membership of Mildert Day Committee is as follows:
+    \begin{enumerate}[(a)]
+        \item Head of Mildert Day,
+        \item Events Officer,
+        \item Formals and Experiences Officer-elect,
+        \item President-elect, \emph{and}
+        \item Several ordinary committee members.
+    \end{enumerate}
+
     \subsection{Fashion Show Committee}
     \item The functions of Fashion Show Committee are:
     \begin{enumerate}[(a)]
         \item To organise, publicise and operate the annual Van Mildert Charity Fashion Show (VMCFS);
         \item To encourage participation from the JCR, MCR and SCR in the VMCFS.
     \end{enumerate}
-    \item The Fashion Show Executive consists of at least six section leaders.
-    \begin{enumerate}
-        \item They are selected by interview by the Fashion Show Director.
-        \item Their roles are defined by the Fashion Show Director.
-        \item They are responsible for their individual sections and the recruitment of volunteers for their sections.
+    \item The membership of Fashion Show Committee is as follows:
+    \begin{enumerate}[(a)]
+        \item Head of VMCFS,
+        \item Events Officer, \emph{and}
+        \item Several ordinary committee members.
     \end{enumerate}
+
     \subsection{Bar Committee}
     \item The functions of Bar Committee are:
     \begin{enumerate}[(a)]
@@ -380,7 +450,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \item The Bar Handbook sets out the number and duties of Bar Committee members and the duties of the Bar Steward additional to their employment contract.
     \subsection{Outreach Committee}
     \item The function of Outreach Committee is to enhance communication between the outreach committees of the JCR.
-    \item Membership of Outreach Committee consists of the JCR Outreach Officer and the Outreach Directors (as defined in Section 3).
+    \item Membership of Outreach Committee consists of the Outreach and Fundraising Officer and the Outreach Directors (as defined in \ref{def:outreach-directors}).
     \subsection{Carers’ Respite Committee}
     \item The functions of Carers’ Respite Committee (CRC) are:
     \begin{enumerate}[(a)]
@@ -510,7 +580,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To provide technical provision and staffing as a paid service to external parties to contribute to technical costs;
         \item To oversee Team Tech.
     \end{enumerate}
-    \item The function of Technical Productions Team ("Team Tech") is to support Technical Committee in its functions.
+    \item The function of Technical Productions Team (``Team Tech'') is to support Technical Committee in its functions.
     \item Technical Productions Team is an open committee.
     \item The Standing Orders of Technical Committee also govern the Technical Productions Team. The Standing Orders must specify the composition and appointment process of Technical Committee and may set rules for membership of the Technical Productions Team.
     \subsection{Freshers’ Representatives and Open Days Committees}
@@ -524,10 +594,9 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \end{enumerate}
     \item The membership of the Freshers’ Representatives Committee includes:
     \begin{enumerate}[(a)]
-        \item The JCR Executive Committee
+        \item The JCR Executive Committee and Executive Officers-elect
         \item The Head of Talk and Support Campaigns Committee
         \item The Head of Talk and Support Pastoral Committee
-        \item The International Officer.
     \end{enumerate}
     \item The functions of Open Days Committee are:
     \begin{enumerate}[(a)]
@@ -538,10 +607,10 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \end{enumerate}
     \item The membership of Open Days Committee includes:
     \begin{enumerate}[(a)]
-        \item The President
-        \item The President-elect
-        \item The Formals and Experiences Officer
-        \item The Senior Welfare Officer.
+        \item The President,
+        \item The President-elect,
+        \item The Senior Welfare Officer, \emph{and}
+        \item The International Officer.
     \end{enumerate}
     \item Freshers’ Representatives Committee members (‘Freps’) and Open Days Committee members (‘Open Day Reps’) have a duty of care towards freshers (new students) and visiting prospective students at Van Mildert College. As part of this duty, all Freps and Open Day Reps must follow the code of conduct set out by the Senior Freshers’ Representative for behaviour during Freshers’ Week and Open Days.
     \begin{enumerate}
@@ -565,6 +634,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To be welfare trained by the Senior Welfare Officer and the head of the committee.
     \end{enumerate}
     \item There must be both male and female members of the Talk and Support Pastoral Committee.
+
     \subsection{Constitutional Committee}
     \item The functions of Constitutional Committee are:
     \begin{enumerate}[(a)]
@@ -572,7 +642,7 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
         \item To decide an election timetable at the start of each term;
         \item To aid the JCR Chair in the running of elections;
         \item To scrutinise the running of elections and referenda;
-        \item To scrutinise the activities of the whole JCR to ensure that they comply with the DSO Framework and the Standing Orders.
+        \item To scrutinise the activities of the whole JCR to ensure that they comply with the Standing Orders.
         \item To be responsible for reviewing the Standing Orders and reporting on any problems, difficulties or inconsistencies;
         \item To draw up proposals to amend the Standing Orders for the benefit of the JCR;
         \item To approve any proposed amendments to the Standing Orders;
@@ -583,46 +653,33 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \end{enumerate}
     \item The membership of Constitutional Committee must be as follows:
     \begin{enumerate}[(a)]
-        \item The Head of Constitutional Committee
-        \item The JCR Chair
-        \item The JCR Deputy Chair
-        \item The JCR President
-        \item The JCR Formals and Experience Officer
-        \item The JCR Senior Welfare Officer
+        \item The Head of Constitutional Committee (the Deputy Chair)
+        \item The President
+        \item The FACSO
+        \item The Senior Welfare Officer
+        \item The Student Trustees
         \item Several ordinary committee members.
     \end{enumerate}
     \begin{enumerate}
-        \item The ordinary committee members must not be JCR Officers.
+        \item The ordinary committee members must not be Executive Officers.
     \end{enumerate}
-    \item Constitutional Committee must meet formally at the start of every term.
-    \item Constitutional Committee may meet without the JCR Chair, Deputy Chair, Vice-President(s) and/or President as necessary to successfully fulfil its functions.
-    \begin{enumerate}
-        \item Any Officers excluded from the meeting count as being present for the purposes of determining if the meeting is quorate.
-    \end{enumerate}
-    \item Voting in Constitutional Committee meetings must be anonymous.
+
     \subsection{Treasury Committee}
     \item The function of Treasury Committee is to oversee the financial operation of the JCR and all clubs, societies and committees affiliated to the JCR.
     \item The membership of Treasury Committee must be as follows:
     \begin{enumerate}[(a)]
-        \item The JCR FACSO (head of the committee)
-        \item The JCR President
-        \item The JCR Chair or Deputy Chair
+        \item The FACSO (head of the committee)
+        \item The President
         \item At least 5 ordinary committee members (‘Treasurers’).
     \end{enumerate}
-    \item The ordinary committee members of Treasury Committee must not be members of the Executive Committee, Services Committee or Bar Committee.
-    \item The minutes of Treasury Committee meetings must be made available to all members of the JCR without unreasonable delay.
-    \item JCR Officer may be required by the JCR FACSO to attend specific meetings of the Treasury Committee, as necessary.
-    \item If the amount of money specified in a financial motion in a JCR meeting is amended, then the amended motion must be approved by Treasury Committee at its next meeting.
-    \item All events budgets must be brought before and approved by Treasury Committee before any spending.
-    \begin{enumerate}
-        \item Treasury Committee may suggest amendments to these budgets.
-    \end{enumerate}
-    \item Any expenditure which is rejected by Treasury Committee may be approved by a motion at a JCR meeting at which the FACSO must explain the reasons for the rejection.
-    \item The Treasury Committee must meet at least 3 times per term when required.
+    \item The ordinary committee members of Treasury Committee must not be Executive Officers.
+
     \subsection{Financial Auditing Committee}
     \item The function of Financial Auditing Committee is to periodically review JCR financial documents and ensure proper financial conduct of the JCR officials and bodies.
     \item The JCR FACSO acts as head of Financial Auditing Committee for the purpose of interviews for membership.
     \item The head of Financial Auditing Committee is elected by its members.
+
+
     \subsection{Website Committee}
     \item The functions of Website Committee are:
     \begin{enumerate}[(a)]
@@ -633,10 +690,11 @@ Amended in April 2020 by Kieran Vickers (Outreach Officer) and the Executive Com
     \end{enumerate}
     \item Website Committee is an open committee directed by an executive consisting of:
     \begin{enumerate}[(a)]
-        \item The JCR Webmaster
-        \item The JCR Vice-President (Development)
-        \item The JCR Communications Officer
+        \item The President,
+        \item The FACSO,
+        \item The Communications Officer,
+        \item The Formals and Experiences Officer, \emph{and}
+        \item The Webmaster
     \end{enumerate}
-    \item The JCR Webmaster is appointed by the committee executive.
 \end{enumerate}
 \end{document}

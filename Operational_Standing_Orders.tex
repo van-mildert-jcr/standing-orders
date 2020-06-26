@@ -1,7 +1,11 @@
-\documentclass[12pt]{article}  % Set font size to 12; article is default LaTeX doc type
-% \usepackage{helvet}  % Use Helvetica
-\usepackage[utf8]{inputenc}  % Set encoding; LaTeX default
-\usepackage[hidelinks, pdfusetitle]{hyperref}  % Table of contents links
+% Set font size to 12; article is default LaTeX doc type and meets our purposes
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}  % Set encoding to Unicode
+\usepackage[
+    hidelinks, % Don't put boxes around links etc
+    pdfusetitle, % Use LaTeX fields to fill PDF metadata
+    pdflang={en-GB} % Set language (for accessibility)
+]{hyperref} % Handles PDF stuff including links/table of contents
 \renewcommand{\familydefault}{\sfdefault}  % Use sans serif font
 \usepackage{graphicx}  % To include coat of arms
 \graphicspath{ {./} }  % Graphics in same folder as this file
@@ -9,23 +13,23 @@
 \setlength{\parskip}{1em}  % Paragraph spacing
 \usepackage[margin=1.2in]{geometry}  % Margins
 \renewcommand{\arraystretch}{1.5}  % Table padding
-\hyphenpenalty=10000  % Prevent hyphenation
+\hyphenpenalty=10000  % Prevent hyphenation (LaTeX can be a bit overzealous)
 \emergencystretch \textwidth  % Fix spacing issues caused by lack of hyphenation
-% Set up numbering
-\usepackage{enumerate}
+% Numbering
+\usepackage{enumerate} % Lets us customise list styles
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumi}{\thesection.\arabic{enumi}.}  % Section number followed by item number for clauses
 \renewcommand{\labelenumii}{\theenumii}
 \renewcommand{\theenumii}{\theenumi\arabic{enumii}.}  % Subclauses
 % Disable subsection numbering
-\usepackage{titlesec}
-\renewcommand{\thesubsection}{}
-\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{}
+\usepackage{titlesec} % Lets us customise title styles
+\renewcommand{\thesubsection}{} % Remove number
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{} % Fix spacing caused by removing number
 
 
 \title{Operational Standing Orders}
 \author{Van~Mildert~College Junior~Common~Room}
-\date{April 2020}
+\date{26th June 2020}
 
 \begin{document}
 \begin{titlepage}  % Title page
@@ -39,7 +43,7 @@
 
 \setcounter{page}{2}  % Correct page numbering
 \section*{Introduction}
-These are the Operational Standing Orders of Van Mildert College Junior Common Room, approved on 26th April 2020.
+These are the Operational Standing Orders of Van Mildert College Junior Common Room, approved on 26th June 2020.
 
 This version was written by the Steering Committee of 2017-18:\\
 \hspace*{2cm}Georgina Robinson (JCR Chair) (HLM)\\
@@ -49,7 +53,8 @@ This version was written by the Steering Committee of 2017-18:\\
 \hspace*{2cm}Amelia Spencer (JCR Vice-Chair)
 
 Amended in October 2018 by the Executive Committee, Sheehan Quirke (JCR President) and Alastair Hargreaves-McManus.\\
-Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR President).
+Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR President).\\
+Amended in June 2020 by the Executive Committee.
 \newpage
 \tableofcontents{}
 \newpage
@@ -66,11 +71,8 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \end{enumerate}
     \item If the JCR Chair is unable to chair a meeting or item of business, then one of the following officers must chair it (in order of precedence):
     \begin{enumerate}[(a)]
-        \item The JCR Deputy Chair
-        \item The JCR President
-        \item The JCR Formals and Experiences Officer
-        \item The JCR Senior Welfare Officer
-        \item The Communications Officer
+        \item The Deputy Chair
+        \item The President
         \item Any other member of the Executive Committee
     \end{enumerate}
     \subsection{Conduct and Discipline}
@@ -94,7 +96,7 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item The agenda must conclude with “Any Other Business”.
     \end{enumerate}
     \subsection{Notice}
-    \item At least five days’ notice must be given for an ordinary meeting of the JCR. 
+    \item At least five days’ notice must be given for an ordinary meeting of the JCR.
     \item At least three days’ notice must be given for an extraordinary meeting of the JCR, which may be called by:
     \begin{enumerate}[(a)]
         \item A signed request from JCR members with the signatures of at least 10\% of JCR members.
@@ -118,8 +120,16 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item An amendment may not be amended. The original amendment must be put to a vote before a second amendment can be discussed.
     \end{enumerate}
     \item The Chair may amend motions without vote to correct a printing or grammatical error only.
-    \item A motion of no confidence can only be moved by the JCR President, Constitutional Committee or a member with the supporting signatures of at least 10\% of JCR members.
-    \item Motions of no confidence and motions to give formal warnings must receive at least two-thirds of the vote to be passed.
+    \item A motion of no confidence can only be moved by:
+    \begin{enumerate}[(a)]
+        \item The President,
+        \item Constitutional Committee, \emph{or}
+        \item A member with the supporting signatures of at least 10\% of JCR members.
+    \end{enumerate}
+    \item A motion of no confidence or formal warning must be approved by a JCR meeting and then by a referendum.
+    \begin{enumerate}
+        \item In the referendum, the motion must receive at least two-thirds of the vote to be approved.
+    \end{enumerate}
     \subsection{General Procedure}
     \item Only one matter at a time may be discussed.
     \item Any member of the JCR may raise a point of order which must take precedence over all other business except when a speech is being delivered.
@@ -196,16 +206,32 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
 \begin{enumerate}
     \item For the purposes of this section (‘Elections and Referenda’), where “notice” is required to be given, this must be given by an email to all JCR members and by a post on the JCR Facebook group.
     \item At least three days’ notice must be given for a referendum or election.
-    \item For every vote of the JCR, the roles of Senior and Junior Returning Officers must be filled by two of the following Officers (in order of precedence):
+    \item For every ballot, the roles of Senior and Junior Returning Officers must be filled by two of the following Officers (in order of precedence):
     \begin{enumerate}[(a)]
         \item The Chair
-        \item The Deputy Chair
         \item The President
-        \item Any other member of the Executive Committee
+        \item Any other member of the Executive Committee.
+    \end{enumerate}
+    \item For every ballot, the role of Scrutineer must not be held by an Executive Officer and must be filled by one of the following (in order of precedence):
+    \begin{enumerate}[(a)]
+        \item The Deputy Chair (as Head of Constitutional Committee)
+        \item A member of Constitutional Committee
+        \item A member of the JCR who is deemed trustworthy by the President.
+    \end{enumerate}
+    \item The President must determine who will fill the roles of the Returning Officers and Scrutineer more than 24 hours before the opening of nominations.
+    \begin{enumerate}
+        \item A member chosen to fill one of these roles must immediately confirm to the President that they are able to do so.
+        \item By accepting a role, a member forfeits their right to run in the election.
+        \item The Chair and Deputy Chair should disclose to the President in advance if they intend to run for election.
+    \end{enumerate}
+    \item The names of the Returning Officers and Scrutineer must be included in the notice for the ballot and, for elections, in the announcement of the opening of nominations.
+    \begin{enumerate}
+        \item The following text must accompany the names:\\
+        ``\textrm{The Scrutineer will make sure the election is conducted fairly and enforce the constitution. If you have any complaints or worries about the election, please refer them to the Scrutineer, who will deal with the issue and take it to the Constitutional Committee for consideration.}''
     \end{enumerate}
     \item The voting for all ballots must be conducted using the online voting system provided by the University.
     \begin{enumerate}
-        \item If a member is unable to vote using this method, then they may make their vote by signed letter or email from their official University account sent to the Senior Returning Officer. 
+        \item If a member is unable to vote using this method, then they may make their vote by signed letter or email from their official University account sent to the Senior Returning Officer.
     \end{enumerate}
     \item Voting for a ballot will be open for a period set by the Senior Returning Officer which must be no shorter than 24 hours and no longer than 168 hours (7 days).
     \begin{enumerate}
@@ -217,6 +243,10 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item Candidates or interested parties must not loiter near the voting station.
         \item The manifestos of all candidates must be displayed at the voting station.
     \end{enumerate}
+    \item The Returning Officers must announce the results of a ballot on the stairs leading down to the JCR and must then publish those results.
+    \begin{enumerate}
+        \item The Returning Officers must also publish the results on the online voting system.
+    \end{enumerate}
     \subsection{Referenda}
     \item A referendum must be held within three weeks of the relevant JCR meeting.
     \begin{enumerate}
@@ -224,25 +254,31 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \end{enumerate}
     \item For all referenda, a copy of the motion together with all other relevant information must be included when notice is given and must be available on the online voting system.
     \subsection{Elections}
-    \item Nominations for elections must be submitted to the Senior Returning Officer in the time period and manner specified by the Chair.
+    \item Constitutional Committee must decide an election timetable at the start of each term.
+    \begin{enumerate}
+        \item The timetables must ensure that elections happen sufficiently in advance of the starts of the terms of office.
+    \end{enumerate}
+    \item Nominations for elections must be submitted by email to the Senior Returning Officer in the time period specified in the election timetable.
     \begin{enumerate}
         \item The time period specified must be no shorter than five days unless Constitutional Committee concludes that there are extraordinary circumstances that make a shorter period necessary for the good governance of the JCR.
-        \item The manner specified must be reasonable and must not discriminate against any potential candidates.
-        \item The Senior Returning Officer must give notice of the time period and manner of submission at least one week before the end of the time period.
+        \item The Senior Returning Officer must announce the opening of nominations.
+        \item The announcement must include the time of the close of nominations, how to submit a nomination and details of the position(s) up for election.
         \item Nominations must contain the names of a proposer and a seconder who are members of the JCR and not members of the Executive Committee.
         \item Nominations must be accompanied by a manifesto not exceeding one side of A4 paper. Candidates may also submit a plain text version of their manifesto for accessibility.
         \item Nominations for a sabbatical role must also be accompanied by a policy statement not exceeding one side of A4 paper.
+        \item If an invalid nomination is submitted, the Returning Officers must inform the nominee and give a reason as soon as possible and allow them to submit a new nomination before the candidates are announced.
     \end{enumerate}
+    \item The Returning Officers must announce the candidates between 12 and 36 hours after the close of nominations.
     \item Candidates may also submit a 200 word statement for display on the online voting system to the Senior Returning Officer before the start of voting.
     \item Unless otherwise stated in the Standing Orders, only sole individuals may be elected to a position.
-    \item All candidates standing for election to be President of Senior Welfare Officer must meet with College Officers before submitting their nomination.
+    \item All candidates standing for election to be President or Senior Welfare Officer must meet with College Officers before submitting their nomination.
     \begin{enumerate}
-        \item A candidate may be deemed unsuitable by the College Officers if they have reasonable grounds to believe that the election of that person would not be in the best interests of either the candidate’s personal welfare of that of the wider JCR or if they conclude that the person is wholly unsuitable for the position. The College Officers are expected to justify such a decision to the candidate and the JCR. Such a candidate is then ineligible to stand at that election. 
+        \item A candidate may be deemed unsuitable by the College Officers if they have reasonable grounds to believe that the election of that person would not be in the best interests of either the candidate’s personal welfare of that of the wider JCR or if they conclude that the person is wholly unsuitable for the position. The College Officers are expected to justify such a decision to the candidate and the JCR. Such a candidate is then ineligible to stand at that election.
     \end{enumerate}
     \item Candidates must take part in hustings or are be deemed to have withdrawn from the election.
     \begin{enumerate}
         \item Candidates may take part in hustings remotely by video call, or similar, if their physical attendance is not possible.
-        \item The Senior Returning Officer may waive this clause at their discretion in the event of exceptional circumstances.
+        \item The Senior Returning Officer may waive this clause at their discretion in exceptional circumstances.
     \end{enumerate}
     \item Accurate minutes of the hustings must be taken and published on the JCR Facebook group before the start of voting.
     \item All elections will be conducted by the Single Transferable Vote system in accordance with the rules set out by the Electoral Reform Society.
@@ -255,12 +291,12 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item RON wins the election
     \end{enumerate}
     \subsection{Campaigning and Publicity}
-    \item In elections for Executive Officers, candidates may canvass on up to three days before the opening of voting takes place. Canvassing must be monitored by a member of Constitutional Committee. The maximum total time spent canvassing is 4.5 hours.
+    \item In elections for Executive Officers, candidates may canvass on up to three days before the opening of voting takes place.
     \begin{enumerate}
-        \item Canvassing should occur in three 90-minute slots.
-        \item This can be waived if Constitutional Committee allow.
+        \item Canvassing must be monitored by a member of Constitutional Committee.
+        \item The maximum total time spent canvassing is 4.5 hours.
+        \item Time restrictions may be waived by Constitutional Committee if fair and beneficial to democracy.
     \end{enumerate}
-    \item In elections for Non-Executive Officers, candidates must not canvass.
     \item All approved manifestos will be printed by the Senior Returning Officer.
     \begin{enumerate}
         \item The same number of manifestos must be printed for each candidate.
@@ -269,6 +305,8 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \item All approved manifestos will be posted on the JCR Facebook group by the Senior Returning Officer after the closing of nominations.
     \item Candidates husting for the role of President must produce a three-minute campaign video to be approved by Constitutional Committee before it is shown at the hustings.
     \begin{enumerate}
+        \item The video must be sent to the Head of Constitutional Committee at least 48 hours before the hustings.
+        \item Constitutional Committee must give prompt feedback so there is time for any necessary changes to be made.
         \item Once shown at the hustings, campaign videos may be published online.
     \end{enumerate}
     \item In an election, a member may only campaign on behalf of RON with permission of the Senior Returning Officer.
@@ -287,66 +325,73 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
 
 \section{Appointment by Interview}
 \begin{enumerate}
-    \item Ordinary members of committees must be appointed by interview unless otherwise stated in the Standing Orders.
     \item The process of appointment by interview must be carried out fairly and impartially.
+    \item Candidates may be asked to complete an application form prior to interview.
+    \begin{enumerate}
+        \item The form must be made available to members at least five days before the deadline for submission.
+        \item The form must not be excessive in length or effort required.
+        \item The submissions must be considered by at least two members of the panel.
+        \item The panel may choose to only interview a subset of the candidates based on their form responses.
+    \end{enumerate}
     \item Where reasonably possible, the interview panel must remain consistent for all candidates for a specific appointment.
     \item The main interview questions must be the same for all candidates for a specific appointment.
     \begin{enumerate}
         \item This clause does not prohibit reasonable follow up questions in response to candidates’ answers.
     \end{enumerate}
     \item Prior to the interview, candidates must be made aware of the criteria with which the interview panel intends to make its decision.
+    \item Candidates have the right (which they may waive) to be given at least four days’ notice for their interview.
+    \item Before their interview and with permission of the Chair, candidates may be given a small project set by the panel to explain in their interview.
     \item Candidates who require it may have interview questions given in writing (during the interview), including any follow up questions.
     \item Interview questions must be created to give candidates an opportunity to give responses that best demonstrate their abilities relating to the criteria.
-    \item For interviews for positions listed in clause 3.1:
+    \item The Chair must act as interview chair.
     \begin{enumerate}
-        \item The interview panel must include the JCR Chair or Deputy Chair, who will chair the interview.
-        \item The interview panel must include any relevant members of the Executive Committee.
-        \item The interview panel must include the incumbent if this is possible. The incumbent must not sit on the panel if they are re-applying for the role.
+        \item The Chair may send the Deputy Chair or an appropriate Executive Officer to act as interview chair on their behalf.
+        \item The interview chair must not hold any other position on the interview panel or have an unfair conflict of interest.
+    \end{enumerate}
+    \item A candidate must not sit on the interview panel.
+    \item For interviews for appointed officers (as listed in Committees and Job Descriptions) Committees and Job Descriptions:
+    \begin{enumerate}
+        \item The interview panel should be as close as reasonably possible to as follows:
+        \begin{enumerate}[(a)]
+            \item The interview chair,
+            \item The President,
+            \item Any relevant Executive Officers, \emph{and}
+            \item The incumbent position holder.
+        \end{enumerate}
+        \item Notwithstanding clause \ref{preterm-prep}, the interview panels for Head of Ball, Head of Mildert Day and Head of VMCFS do not include the Events Officer-elect.
+        \item The application form may be written by one or more of the panel and must be agreed by the whole panel.
         \item Candidates may submit a statement of intent describing their plans for the role. This statement must be no longer than one side of A4.
-        \item Once a successful candidate is selected by the panel, the chair must inform the JCR at the next meeting and on the JCR Facebook group.
+        \item Once a successful candidate is selected by the panel, the Chair must inform the JCR at the next meeting and on the JCR Facebook group.
         \item A member of the JCR may formally oppose the appointment of a candidate.
     \end{enumerate}
     \item For interviews for committees:
     \begin{enumerate}
-        \item The interview panel must include:
+        \item The interview panel should be as close as reasonably possible to as follows:
         \begin{enumerate}[(a)]
-            \item The JCR Chair or Deputy Chair, who will chair the interview
-            \item The head of the committee (or deputy if this is not possible)
-            \item The JCR President or a JCR Vice-President
-            \item  Up to two committee members, at the discretion of the interview chair
+            \item The interview chair,
+            \item The head of the committee (or deputy if this is not possible),
+            \item Any relevant Executive Officers, \emph{and}
+            \item Up to two committee members, at the discretion of the interview chair.
         \end{enumerate}
-        \item Candidates must complete a written application form written by the head of the committee in consultation with the chair.
-        \item The form must not exceed one side of A4 and must contain:
-        \begin{enumerate}[(a)]
-            \item A section for the candidate’s personal details,
-            \item A section for the candidate to describe their experience, and
-            \item (At most) three further relevant questions.
-        \end{enumerate}
-        \item The form must be made available to members at least five days before the deadline for submission.
-        \item The written applications must be considered jointly by the head of the committee, the chair and one other member of the panel, and they must decide who will be invited for interview. There must be no upper or lower limit on the number of candidates invited for interview.
-        \item Candidates must be given at least four days’ notice for their interview.
-        \item The head of the committee must write the main interview questions and submit them to the rest of the panel at least five days before the first interview. 
-        \item Before their interview and with permission of the chair, candidates may be given a small project set by the panel to explain in their interview.
+        \item The head of the committee must write the application form and the main interview questions which must be agreed by the whole panel.
     \end{enumerate}
-    \item The chair of an interview must ensure that it is carried out fairly and in accordance with the Standing Orders. The chair may deem a question to be inappropriate and the candidate must not answer it.
+    \item The interview chair must ensure that the appointment process is carried out fairly and in accordance with the Standing Orders.
+    \item The interview chair may deem a question to be inappropriate and the candidate must not answer it.
     \item Following the interviews, the panel will discuss each of the candidates, comparing them to the criteria.
     \item Selections must be based only on the interviews, subsequent discussions by the panel and their written application/statement of intent.
     \item If the discussion is unsuccessful in determining the successful candidate(s) by consensus, then selection may be decided by secret ballot of the panel.
-    \begin{enumerate}
-        \item In event of three successive ties in such a ballot, the leading candidates must be interviewed for a second time. This may be by a different panel, at the discretion of the JCR Chair.
-    \end{enumerate}
     \item If any positions are not filled after the initial interview process, then the interview process will re-open again to fill the remaining positions at a reasonable future date.
     \item If there is any evidence of improper behaviour or bias towards any candidate, whether immediately apparent or later reported, then the JCR Chair must report the matter to Constitutional Committee who may nullify the decisions of the interview process and order it to be restarted.
 \end{enumerate}
 \newpage
 
-\section{Committees, Clubs and Societies}
+\section{Clubs and Societies}
 \begin{enumerate}
     \item A club or society affiliated to the JCR may use the college name and apply for funding from the JCR.
     \item All clubs and societies affiliated with the JCR are bound by the Standing Orders.
-    \item All clubs and societies must have a constitution of their own which must have been approved by Constitutional Committee. Committees of the JCR may also decide to have their own constitution which must be approved by Constitutional Committee.
+    \item All clubs and societies must have a constitution of their own which must have been approved by Constitutional Committee.
     \begin{enumerate}
-        \item The JCR Chair may make final binding rulings on matters of interpretation. 
+        \item The JCR Chair may make final binding rulings on matters of interpretation.
         \item The JCR Standing Orders take precedence.
         \item All constitutions must be available to all JCR members.
     \end{enumerate}
@@ -359,8 +404,6 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \begin{enumerate}
         \item Unless otherwise stated in the JCR Standing Orders, executive committees must be elected in fair and free elections that may be observed by the JCR Chair and Constitutional Committee.
     \end{enumerate}
-    \item All JCR committee heads must submit a report to the JCR at the final meeting of the year.
-    \item The quorum for all JCR committees is two-thirds of its membership, unless otherwise stated in the JCR Standing Orders.
     \item Any JCR committee, club or society must ensure that spaces they have used are returned to a useable state as soon as reasonably possible.
     \item All equipment and funds of all affiliated clubs and societies are property of the JCR.
     \item Any member of the JCR may propose the creation of a club or society to be affiliated to the JCR. The procedure is as follows:
@@ -369,55 +412,82 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item The Executive Committee must consider the proposal and decide if they will formally support or oppose it, giving reasons.
         \item The proposal must be presented to the next JCR meeting (as a motion) and approved by a vote of the JCR.
     \end{enumerate}
+    \item A club/society may not disaffiliate from the JCR.
+    \item A club/society may be suspended or dissolved by a vote of the JCR.
+    \item A club/society may be suspended by the JCR President if they are requested to do so by the University.
+    \item In the event of suspension or dissolution, all equipment and funds of a club/society come under the control of the JCR Executive Committee.
+\end{enumerate}
+\newpage
+
+\section{Committees}
+\begin{enumerate}
+    \item The quorum for all JCR committees is two-thirds of its membership, unless otherwise stated in the JCR Standing Orders or a higher quorum is stated in the committee constitution.
+    \item The Chair (or their deputy) does not count for the purposes of committee quorums.
+    \item \label{Chair Vote} The Chair cannot vote in committees except to give a casting vote in accordance with the following principles:
+    \begin{enumerate}[(a)]
+        \item The Chair should vote to enable further discussion or investigation.
+        \item The Chair should vote to maintain the status quo where there is no majority in favour of change.
+    \end{enumerate}
+    \item Committees of the JCR may decide to have their own constitution which must be approved by Constitutional Committee.
+    \begin{enumerate}
+        \item The JCR Chair may make final binding rulings on matters of interpretation.
+        \item The JCR Standing Orders take precedence.
+        \item All constitutions must be available to all JCR members.
+    \end{enumerate}
+    \subsection{Membership}
+    \item An open committee is one that any JCR member may join on request.
+    \begin{enumerate}
+        \item JCR committees are not open unless this is explicitly stated in the Standing Orders.
+    \end{enumerate}
+    \item For non-open committees, ordinary committee members must be appointed by interview unless otherwise stated in the Standing Orders.
+    \item \label{vacant-quorum}A vacant position must still be counted for the purposes of determining if a committee is quorate.
+    \item An ordinary committee member who does not attend at least 60\% of meetings in a term without reasonable excuse may be removed by the head of the committee with permission of the Chair.
+    \item An ordinary committee member who does not satisfactorily fulfil their committee responsibilities or commits misconduct may be removed by the head of the committee with permission of Constitutional Committee.
+    \item A member may appeal removal in accordance with the Permanent Standing Orders.
+    \item Unless otherwise stated, the head of the committee has discretion as to whether to appoint a replacement of a vacating ordinary committee member.
+    \subsection{Temporary committees}
     \item A Temporary Committee may be created by the Executive Committee with approval of a motion of a JCR meeting.
     \begin{enumerate}
         \item The motion must specify the purpose, the membership (including the head), and the lifetime of the committee, and if the committee will be able to spend JCR funds.
         \item Further motions may be passed to amend or disband the committee.
     \end{enumerate}
-    \item A club/society may be suspended or dissolved by a vote of the JCR.
-    \item A club/society may be suspended by the JCR President if they are requested to do so by the University.
-    \item In the event of suspension or dissolved, all equipment and funds of a club/society come under the control of the JCR Executive Committee.
 \end{enumerate}
-\newpage
 
 \section{JCR Officers}
 \begin{enumerate}
-    \item Where this section (‘JCR Officers’) refers to appointment, it refers to the standard method of appointment for that position be that election or interview or otherwise.
-    \item Unless otherwise stated in the Standing Orders, all Officers hold office for one year following their election.
-    \item If a JCR Officer or Other Official resigns or is removed, then the Executive Committee must ensure that the duties of their position are fulfilled by another JCR Officer or Officers until a replacement is appointed.
-    \item If JCR Officer, Other Official or ordinary committee member resigns or is removed, then a replacement must be appointed at the earliest possible time.
-    \item A vacant position must still be counted for the purposes of determining if a committee is quorate.
-    \item Members of any JCR committee who do not attend at least 60\% of committee meetings in a term are deemed to have resigned.
+    \item An officer ceases to hold office if their position is abolished.
     \begin{enumerate}
-        \item This clause may be waived at the discretion of the JCR Chair or the head of the committee if there are extenuating circumstances.
+            \item However, if an abolished position has a clear replacement, the incumbent may continue to serve in the new position for the remainder of their term of office.
     \end{enumerate}
-    \item Following unsatisfactory fulfilment of committee responsibilities or misconduct, an ordinary committee member may be removed by the committee head with permission of Constitutional Committee.
-    \item A member may appeal to the JCR Chair against removal from a committee. If the JCR Chair cannot resolve the issue satisfactorily then the member will have the write to request a hearing.
-    \item The panel for an appeal hearing (for the purposes of the above clause) must be as follows:
+    \item If an Officer resigns or is removed, then the Executive Committee must ensure that:
     \begin{enumerate}[(a)]
-        \item JCR President
-        \item JCR Vice-Presidents
-        \item The relevant committee head
-        \item Another committee head
-        \item An ordinary member of the relevant committee.
+        \item the duties of their position are fulfilled by another Officer or Officers until the position is filled, \emph{and}
+        \item a replacement is elected/appointed as soon as possible.
     \end{enumerate}
+    \item\label{preterm-prep} Where necessary, a member who has been elected/appointed but does not yet hold office may act as reasonably necessary in preparation for their term of office.
     \begin{enumerate}
-        \item The panel must consider whether all necessary evidence had been considered before the removal decision was made.
-        \item The panel may overrule the decision to remove the member if they feel that the removal was inappropriate.
-        \item The panel itself can only be overruled by a two-thirds majority vote at a JCR meeting.
+        \item This includes appointing officers and committee members.
+    \end{enumerate}
+    \item Officers must prepare a position card explaining their role and submit this to the Chair prior to the election/appointment process for their successor.
+    \item Officers must prepare a handover document explaining how to carry out the role for their successor.
+    \begin{enumerate}
+        \item The handover document must be kept up-to-date throughout the term of office.
+        \item Handover documents must be stored centrally in a system chosen by the President.
     \end{enumerate}
 \end{enumerate}
 \newpage
 
 \section{The Executive Committee}
 \begin{enumerate}
+    \item The Executive Committee, whenever possible, will be chaired by the Chair.
+    \begin{enumerate}
+        \item When this is not possible, they must appoint the Deputy Chair or any other member of the Executive Committee to chair in their place.
+    \end{enumerate}
     \item The Executive Committee may delegate any of its powers to any sub-committee consisting of one or more Executive Officers.
     \begin{enumerate}
         \item Any such delegation is made subject to any conditions the Executive Committee may impose and may be revoked or altered at any time.
     \end{enumerate}
-    \item A member can only hold one Executive Officer position at a time but can be re-elected to the same position or elected to a different position for a term of office after the end of their current term.
     \item Any Executive Officer may be mandated by the JCR to sit on a JCR committee not included in their normal responsibilities by a motion at a JCR meeting.
-    \item Executive Officers must act impartially towards candidates during elections. They must not offer support or assistance to any candidate without offering the same to all other candidates in the same election.
     \item Past and present Executive Officers/Officers-elect must not propose or second a nomination for any post or office of the JCR.
     \item The Executive Committee must meet at least twice a term.
     \item The quorum for the Executive Committee is 7 Officers.
@@ -428,6 +498,21 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \item Executive Officers in College for Executive Committee business may receive free meals, authorised by the President.
 \end{enumerate}
 \newpage
+
+\section{Constitutional Committee}
+\begin{enumerate}
+    \item Constitutional Committee must meet formally at the start of every term.
+    \item Constitutional Committee may exclude any of its members from a meeting or part of a meeting if reasonably necessary to successfully fulfil its scrutiny functions.
+    \item For Constitutional Committee, the following special conditions apply to the quorum:
+    \begin{enumerate}
+        \item The quorum only counts non-Executive Officer members.
+        \item The committee is considered to be inquorate if non-Executive Officer members do not outnumber the voting Executive Officer members.
+        \item For the fulfilment of this requirement, an Executive Officer member may exclude themself from votes while remaining present at a meeting.
+    \end{enumerate}
+    \item Constitutional Committee meetings must be chaired by one of the non-Executive Officer members on a rotating basis.
+    \item Voting in Constitutional Committee meetings must be anonymous.
+    \item Constitutional Committee can require the attendance of any Officer at a meeting if this is reasonably necessary for the fulfilment of its functions.
+\end{enumerate}
 
 \section{Finances}
 \begin{enumerate}
@@ -463,16 +548,78 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \item Expenditure on individual products/services up to £200 must be approved by the JCR President and FACSO together.
     \item Expenditure on individual products/services from £200 up to £1,000 must be approved by Treasury Committee and Executive Committee.
     \item Expenditure on individual products/services above £1,000 must be approved by Treasury Committee and Executive Committees and then by a motion at a JCR meeting.
+    \item If the amount of money specified in a financial motion in a JCR meeting is amended, then the amended motion must be approved by Treasury Committee at its next meeting.
     \subsection{The JCR Levy}
-    \item In their first year of study, new undergraduate members will be charged the JCR levy for three years of study (the ‘full’ JCR levy). 
-    \item For each year of study after their first three, undergraduate JCR members must pay an additional fee equal to 1/3 of the full JCR levy (as their levy) or opt-out from membership
-    \item A member of the MCR who opts into JCR membership must pay a fee (as their levy) set by the JCR President and JCR FACSO in consultation with the MCR.
-    \item If a student who has opted out of the JCR wishes to join the JCR and they have not previously paid the JCR levy, then they must pay a fee equal to 1/3 of the full JCR levy per year or part year that they are a member of the JCR (as their levy).
-    \item Non-members may be charged more than JCR members for JCR events and JCR affiliated club/society memberships where they are partially funded by JCR levy contributions.
+    \item In their first year of study, new undergraduate members will be charged the JCR levy (the ``full JCR levy'').
+    \item A member of the MCR who opts into JCR membership must pay a levy (the ``postgraduate levy'') set by the JCR President and JCR FACSO in consultation with the MCR.
+    \begin{enumerate}
+        \item The postgraduate levy must not be more than 1/3 of the full JCR levy.
+    \end{enumerate}
+    \item A non-member who wishes to join the JCR must pay a levy.
+    \begin{enumerate}
+        \item An undergraduate student must pay 1/3 of the full JCR levy for each year or part year that they have remaining of their degree, up to the full JCR levy amount.
+        \item If a student previously paid the levy and subsequently opted out, then the amount they paid previously (less any refunded) must be taken into account.
+    \end{enumerate}
+    \item Non-members may be charged more than members for goods, services, events and JCR-affiliated club/society memberships where they are partially funded by JCR levy contributions.
     \begin{enumerate}
         \item The additional amount will be decided by the JCR FACSO.
         \item The FACSO is responsible for maintaining a list of current undergraduate students of the College who are not members of the JCR to facilitate the enforcement of this clause.
     \end{enumerate}
-    \item To change the levy amount for the next academic year, a proposal must be submitted by the JCR FACSO to the Executive Committee and the Treasury Committee. If both committees approve the proposal, then it must be approved by a motion at a JCR meeting to come into effect.
+    \item To change the full JCR levy amount for the next academic year, a proposal must be submitted by the JCR FACSO to the Executive Committee and the Treasury Committee. If both committees approve the proposal, then it must be approved by a motion at a JCR meeting to come into effect.
+    \subsection{Treasury Committee}
+    \item The minutes of Treasury Committee meetings must be made available to all members of the JCR without unreasonable delay.
+    \item Any Officer may be required by the FACSO to attend specific meetings of the Treasury Committee if reasonably necessary.
+    \item All events budgets must be brought before and approved by Treasury Committee before any spending.
+    \begin{enumerate}
+        \item Treasury Committee may suggest amendments to these budgets.
+    \end{enumerate}
+    \item Any expenditure which is rejected by Treasury Committee may be approved by a motion at a JCR meeting at which the FACSO must explain the reasons for the rejection.
+    \item Meetings of Treasury Committee must be chaired by the Chair or Deputy Chair.
+    \begin{enumerate}
+        \item Where this is not possible, the Chair must appoint an Executive Officer, other than the FACSO or President, to chair in their place.
+    \end{enumerate}
+    \item Treasury Committee may continue to exist - remotely - between the end of Easter term and start of Michaelmas term as the ``Summer Treasury Committee''.
+    \begin{enumerate}
+        \item The ordinary committee members of the Summer Treasury Committee are those of the preceding Treasury Committee who are still JCR members.
+        \item The Summer Treasury Committee advises and assists the FACSO with the creation of the annual budget.
+    \end{enumerate}
 \end{enumerate}
+
+\section{Awards}
+\begin{enumerate}
+    \item At the end of Easter Term, the JCR will present awards to recognise the achievements and contributions of members.
+    \subsection{Principal's Awards}
+    \item Principal's Awards are awarded to finalists to recognise their contributions to the JCR and wider community.
+    \item The President must take nominations from JCR members.
+    \item The President must establish a panel representative of the JCR to select recipients.
+    \begin{enumerate}
+        \item The panel should (though is not required to) comprise a minimum of two students from each of the first three year groups and the President-elect.
+        \item The Principal must be invited to join the panel.
+        \item The panel must be chaired by one of the following (in order of precedence) who must not have been nominated for an award:
+        \begin{enumerate}[(a)]
+            \item Deputy Chair,
+            \item Chair,
+            \item A member of Constitutional Committee, \emph{or}
+            \item An ordinary member of the JCR deemed trustworthy by the President.
+        \end{enumerate}
+    \end{enumerate}
+    \item Members of the panel who are being considered for an award must not be present while recipients for the award are being decided.
+    \begin{enumerate}
+        \item Members who are selected as recipients of the award may return to the panel if the benefits of their presence would outweigh any potential conflict of interest.
+    \end{enumerate}
+    \item The Principal will present the awards at the Principal's Formal.
+    \subsection{Sports Awards}
+    \item Sports Awards are awarded to recognise contributions and achievements in sport.
+    \item The Sports and Societies Officer must take nominations from JCR members.
+    \item The Sports and Societies Officer must establish a panel representative of the JCR sports community to select recipients.
+    \item The Principal will present the awards at the Sports Formal.
+    \subsection{College Colours}
+    \item College Colours are awarded to non-finalists to recognise their contributions to the JCR and wider community.
+    \item First year students may be awarded Half Colours.
+    \item Second year students may be awarded Full colours.
+    \item The Executive Committee must collectively select recipients.
+    \item Each Executive Officer may nominate a candidate for Half Colours and a candidate for Full Colours.
+\end{enumerate}
+
+
 \end{document}

@@ -1,7 +1,11 @@
-\documentclass[12pt]{article}  % Set font size to 12; article is default LaTeX doc type
-% \usepackage{helvet}  % Use Helvetica
-\usepackage[utf8]{inputenc}  % Set encoding; LaTeX default
-\usepackage[hidelinks, pdfusetitle]{hyperref}  % Table of contents links
+% Set font size to 12; article is default LaTeX doc type and meets our purposes
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}  % Set encoding to Unicode
+\usepackage[
+    hidelinks, % Don't put boxes around links etc
+    pdfusetitle, % Use LaTeX fields to fill PDF metadata
+    pdflang={en-GB} % Set language (for accessibility)
+]{hyperref} % Handles PDF stuff including links/table of contents
 \renewcommand{\familydefault}{\sfdefault}  % Use sans serif font
 \usepackage{graphicx}  % To include coat of arms
 \graphicspath{ {./} }  % Graphics in same folder as this file
@@ -9,23 +13,23 @@
 \setlength{\parskip}{1em}  % Paragraph spacing
 \usepackage[margin=1.2in]{geometry}  % Margins
 \renewcommand{\arraystretch}{1.5}  % Table padding
-\hyphenpenalty=10000  % Prevent hyphenation
+\hyphenpenalty=10000  % Prevent hyphenation (LaTeX can be a bit overzealous)
 \emergencystretch \textwidth  % Fix spacing issues caused by lack of hyphenation
-% Set up numbering
-\usepackage{enumerate}
+% Numbering
+\usepackage{enumerate} % Lets us customise list styles
 \renewcommand{\labelenumi}{\theenumi}
 \renewcommand{\theenumi}{\thesection.\arabic{enumi}.}  % Section number followed by item number for clauses
 \renewcommand{\labelenumii}{\theenumii}
 \renewcommand{\theenumii}{\theenumi\arabic{enumii}.}  % Subclauses
 % Disable subsection numbering
-\usepackage{titlesec}
-\renewcommand{\thesubsection}{}
-\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{}
+\usepackage{titlesec} % Lets us customise title styles
+\renewcommand{\thesubsection}{} % Remove number
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{} % Fix spacing caused by removing number
 
 
 \title{Permanent Standing Orders}
 \author{Van~Mildert~College Junior~Common~Room}
-\date{April 2020}
+\date{26th June 2020}
 
 \begin{document}
 \begin{titlepage}  % Title page
@@ -39,7 +43,7 @@
 
 \setcounter{page}{2}  % Correct page numbering
 \section*{Introduction}
-These are the Permanent Standing Orders of Van Mildert College Junior Common Room, approved on 26th April 2020.
+These are the Permanent Standing Orders of Van Mildert College Junior Common Room, approved on 26th June 2020.
 
 This version was revised by the Steering Committee of 2017-18:\\
 \hspace*{2cm}Georgina Robinson (JCR Chair) (HLM)\\
@@ -49,7 +53,8 @@ This version was revised by the Steering Committee of 2017-18:\\
 \hspace*{2cm}Amelia Spencer (JCR Vice-Chair)
 
 Amended in October 2018 by the Executive Committee, Sheehan Quirke (JCR President) and Alastair Hargreaves-McManus.\\
-Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR President).
+Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR President).\\
+Amended in June 2020 by the Executive Committee.
 \newpage
 \tableofcontents{}
 \newpage
@@ -57,63 +62,81 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
 
 \section{Preface}
 \begin{enumerate}
+    \item The JCR is a students' union formed as a Charitable Incorporated Organisation.
+    \item The JCR voted to leave the Durham Student Organisation in February 2019 and was established as an independent charity in August 2020.
     \item In these Standing Orders the following terms shall be understood with the following meanings:\\
 \begin{tabular}{|p{1.5in}|p{3.8in}|}\hline
     \textbf{Term}           & \textbf{Definition}\\ \hline
     JCR                     & Junior Common Room of Van Mildert College\\ \hline
-    MCR                     & Middle Common Room of Van Mildert College\\ \hline
+    CIO						& Van Mildert College Junior Common Room  Charitable Incorporated Organisation\\\hline
+    MCR                     & Middle Common Room of Van Mildert College\\\hline
     College                 & Van Mildert College\\ \hline
-    College Council         & College Council of Van Mildert College\\ \hline
     DSU                     & Durham Students' Union\\ \hline
     Standing Orders         & Collectively the Permanent Standing Orders, the Operational Standing Orders and Committees and Job Descriptions Standing Orders \\ \hline
-    Framework               & The DSO Framework\\ \hline
-    Officer                 & Any person who holds an official position within the JCR (excluding clubs, societies and the Sabbatical Bar Steward) \\ \hline
+    Governing Document      & The constitution of the CIO\\\hline
+    Trustees				& Trustees of the CIO\\\hline
+    Student Trustees		& Students elected as Trustees\\\hline
+    Internal Trustees		& Student and Sabbatical Officer Trustees\\\hline
+    External Trustees		& Trustees who are not Internal Trustees\\\hline
+    Board of Trustees		& Trustee board of the CIO\\\hline
+    Officer                 & Any person who holds an official position in the JCR specified in the Standing Orders\\ \hline
     Elected Officer         & An Officer elected where the electorate was the whole JCR \\ \hline
-    Appointed Officer       & An Officer appointed by interview to a position that is not an ordinary committee member \\ \hline
+    Appointed Officer       & An Officer appointed by interview to a position (that is not an ordinary committee member) \\ \hline
     Ordinary committee member & A member of a committee who is not a member ex-officio \\ \hline
     Executive Officer       & An Officer who is a member of the Executive Committee \\ \hline
+    Sabbatical Officer		& The President or FACSO\\\hline
     Ballot                  & An election or referendum \\ \hline
+    Examination Period      & The Main Examination Period in May/June as defined by the University\\\hline
 \end{tabular}
-    \item The JCR is a student organisation which is part of the Durham Student Organisation (DSO) and operates within the DSO Framework. The JCR voted to accept the DSO Framework on 3rd March 2011.
-    \item In accordance with the DSO Framework, the parent body of the JCR is the College.
-    \item Matters on which agreement cannot be reached between the College and the JCR shall be adjudicated by a panel established by agreement of the JCR President and the Head of College for that purpose.
-    \item The JCR voted to leave the DSO in February 2019, and so the President and FACSO must work to establish the JCR as an independent charity.
 \end{enumerate}
 %\newpage
 
 \section{Status of Standing Orders}
 \begin{enumerate}
-    \item The JCR must be operated in accordance with the DSO Framework and its Standing Orders. Should there be a conflict between the Framework and the Standing Orders, the requirements of the Framework will take precedence.
+    \item The JCR must be operated in accordance with its Governing Document and its Standing Orders. Should there be a conflict between the Governing Document and the Standing Orders, the Governing Document will take precedence.
+    \item The JCR must be operated in accordance with the directions of the Board of Trustees. Should there be a conflict with the Standing Orders, the directions will take precedence.
     \item Any documents, policies or decisions of the JCR must be subject to the Standing Orders.
-    \item The Standing Orders must be reviewed at least once every five years.
-    \item Where a conflict exists between sections of the Standing Orders, the order of precedence is a follows:
-    \begin{enumerate}[a)]
+    \item Where a conflict exists between parts of the Standing Orders, the order of precedence is a follows:
+    \begin{enumerate}[(a)]
         \item Permanent Standing Orders
         \item Operational Standing Orders
         \item Committees and Job Descriptions
         \item Appendices to the Standing Orders
     \end{enumerate}
-    \item The Committees and Job Descriptions section must only contain descriptions of JCR committees and roles.
+    \item The Committees and Job Descriptions part must only contain descriptions of JCR committees and roles.
+    \begin{enumerate}
+        \item The part may specify terms of office.
+        \item The part may not grant monetary benefits.
+    \end{enumerate}
     \item Unless explicitly stated otherwise in the Standing Orders, the Appendices to the Standing Orders are advisory only.
     \item The JCR Chair must rule on matters of interpretation.
     \begin{enumerate}
-        \item These rulings must be approved by vote of Constitutional Committee.
+        \item Significant rulings should be documented and considered by Constitutional Committee.
     \end{enumerate}
 \end{enumerate}
 \newpage
 
 \section{Amendment of Standing Orders}
 \begin{enumerate}
-    \item Any proposed changes to the Standing Orders must be submitted to the JCR Constitutional Committee for its consideration.
+    \item This section sets out the procedure for amending the Standing Orders.
+    \item\label{amendmentConsideration} Any proposed amendment must be considered by the Executive Committee \emph{and} Constitutional Committee.
     \begin{enumerate}
-        \item Constitutional Committee can give or withhold its approval or suggest amendments but cannot veto any proposed change.
+        \item Consideration may include suggesting amendments or expressing disapproval.
     \end{enumerate}
-    \item Any proposed amendment to the Permanent Standing Orders must be approved by an Officer of the Executive Committee.
-    \item Following consideration by Constitutional Committee, a proposed amendment must be presented to a JCR Meeting for debate.
-    \item Proposed amendments to the Standing Orders must finally be approved by referendum in accordance with the procedure set out in the Operational Standing Orders.
+    \item Any proposed amendment must fulfil one of the following conditions:\label{amendmentApproval}
+    \begin{enumerate}[(a)]
+        \item Be approved by the Executive Committee and Constitutional Committee;
+        \item Be approved by the Executive Committee without the approval of Constitutional Committee after having sought the approval of Constitutional Committee in three different academic terms;
+        \item Be proposed by the Board of Trustees; \emph{or}
+        \item Be supported by the signatures of at least 25\% of JCR members.
+    \end{enumerate}
+    \item Any proposed amendment must be approved by the Board of Trustees.\label{amendmentApproval-trustees}
+    \item Proposal by a committee is taken to imply its consideration and approval.
+    \item\label{amendmentDebate}Following fulfilment of the clauses \ref{amendmentConsideration}, \ref{amendmentApproval} and \ref{amendmentApproval-trustees}, a proposed amendment must be published to members and presented to a JCR Meeting for debate.
+    \item Finally, a proposed amendment must be approved by referendum in accordance with the procedure set out in the Operational Standing Orders.
     \begin{enumerate}
-        \item If the ballot fails to be quorate, then its decision may stand if it received at least two-thirds of the votes cast.
-        \item Proposed amendments to the Committees and Job Descriptions section may instead be approved by an ordinary JCR motion.
+        \item If the referendum fails to be quorate, then it may approve the amendment if it was supported by at least two-thirds of the votes cast.
+        \item Proposed minor amendments to the Committees and Job Descriptions part only may instead be approved by an ordinary JCR motion at a quorate JCR meeting.
     \end{enumerate}
     \item Changes to the Appendices to the Standing Orders that represent a change in a policy/procedure may only be made with approval by a JCR motion in accordance with the procedure set out in the Operational Standing Orders.
     \item Changes to the Appendices to the Standing Orders that do not represent a change in policy/procedure, such as the addition of new Honorary Life Member or newly approved societies, may be made by the JCR President.
@@ -143,20 +166,30 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
 
 \section{Membership}
 \begin{enumerate}
-    \item The following people are full members of the JCR:
+    \item The following people are eligible to be full members of the JCR:
     \begin{enumerate}[(a)]
-        \item All undergraduate students of the University of Durham who are registered as members of Van Mildert College and have opted in to JCR membership.
+        \item Undergraduate students of the University~of~Durham who are members of Van~Mildert~College.
+        \item Postgraduate students who are members of the MCR.
         \item Sabbatical officers of the JCR.
-        \item Any sabbatical officer of a student organisation recognised by the University who was within the twelve months before their appointment as sabbatical officer a member of the JCR.
-        \item Any member of the MCR who has opted-in to the JCR.
+        \item The sabbatical Bar Steward of the College bar.
+        \item Any sabbatical officer of a student organisation recognised by the University who was within a year prior to their taking office a member of the JCR.
+    \end{enumerate}
+    \item Eligible undergraduate students are assumed to be members of the JCR unless they opt out of membership.
+    \item Student members of the JCR are required to pay a levy for membership.
+    \begin{enumerate}
+        \item Students who fail to pay their levy within their first term of study are considered to have opted out of membership.
     \end{enumerate}
     \item There are also Honorary Life Members appointed by the awarding panel.
     \begin{enumerate}
         \item Honorary Life Members are not permitted to be officers of the JCR.
     \end{enumerate}
-    \item All members of the JCR, other than Honorary Life Members and sabbatical officers of the JCR, are required to pay a levy. This levy shall be collected in the first term of that member’s first year of study. Persons who have not paid the levy shall be considered to have opted out of JCR membership.
     \item Any member may opt out of JCR membership at any time by providing a signed statement to that effect to the JCR President.
+    \begin{enumerate}
+        \item A member who opts out of membership does not have the right to receive a refund of their levy.
+        \item Partial refunds of a member's levy may be given in exceptional circumstances at the discretion of the sabbatical officers.
+    \end{enumerate}
     \item A person who has opted out of JCR membership may opt in to JCR membership by providing a signed statement to that effect to the JCR President and paying the JCR levy if they have not previously done so.
+    \item A member may have their membership revoked by the Board of Trustees if they are found to have committed serious misconduct.
     \item Only JCR members are entitled to vote on decisions of or to be an officer of the JCR (or any club or society affiliated to it).
 \end{enumerate}
 \newpage
@@ -172,17 +205,13 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item Procedural motions take effect immediately and do not require the JCR Meeting to be quorate. A procedural motion must only relate to the conduct of the meeting.
         \item The Chair may allow decisions to be made by an inquorate meeting if they are uncontroversial, they do not permit the use of JCR funds and no member present objects.
         \item No decisions may be made in a JCR Meeting with fewer than 10 members present or fewer than 5 members who not Executive Officers present.
-        \item No decisions may be made in a JCR Meeting that is not during term-time.
         \item Decisions made by an inquorate JCR Meeting may be voided by the Executive Committee or Constitutional Committee. This may only happen within 3 days of the decision taking effect.
     \end{enumerate}
     \item Decisions of a JCR Meeting (excluding procedural motions) do not take effect until minutes of the meeting are published.
     \item Unless otherwise stipulated by the Standing Orders, decisions must be made by simple majority vote.
-    \item Any motion, normal or financial, may be referred to the Executive Committee or Treasury Committee respectively for a ruling if a decision is required before the next quorate JCR meeting.
-    \begin{enumerate}
-        \item If passed, the motion must be debated at the next JCR meeting.
-    \end{enumerate}
     \item All policy passed by the JCR must be renewed annually in a JCR meeting and must be incorporated into Appendix I of the Standing Orders.
     \item In the event of a referendum failing to be quorate, the decision shall be invalid unless a provision in the Standing Orders states otherwise.
+    \subsection{Executive Committee}
     \item The JCR has an Executive Committee which is collectively responsible to the JCR for:
     \begin{enumerate}[(a)]
         \item Administering the JCR during the periods between JCR Meetings. This will include making decisions on behalf of the JCR on routine or non-contentious matters.
@@ -192,7 +221,7 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item Ensuring that the JCR is maintained in a sound financial position and that appropriate financial records are being maintained.
         \item Managing the business of the JCR meeting.
     \end{enumerate}
-    \item The Executive Committee consists on the following members:
+    \item The Executive Committee consists of the following members:
     \begin{enumerate}[(a)]
         \item JCR President
         \item JCR Formals and Experiences Officer
@@ -208,22 +237,19 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
         \item Sabbatical Bar Steward
     \end{enumerate}
     \item The Sabbatical Bar Steward is a non-voting member of the Executive Committee.
-    \item The Executive Committee, whenever possible, will be chaired by the JCR Chair
-    \begin{enumerate}
-        \item When not possible the order of precedence for chairing Executive Committee is as follows:
-        \begin{enumerate}[(a)]
-            \item The JCR Deputy Chair
-            \item The JCR President
-            \item The JCR Formals and Experiences Officer
-            \item The JCR Senior Welfare Officer
-            \item The Communications Officer
-            \item Any other member of the Executive Committee
-        \end{enumerate}
-    \end{enumerate}
     \item The Executive Committee must submit reports on its actions to JCR meetings as appropriate.
-    \item The JCR may delegate responsibilities to committees and officers as set out in Operational Standing Orders.
+    \item Executive Officers are expected to attend all JCR meetings.
+
+    \subsection{Internal Trustees}
+    \item The President and FACSO are trustees of the CIO.
+    \item The JCR elects 2 student trustees for the CIO.
+    \item The student trustees must not be Executive Officers.
+
+    \subsection{Miscellaneous provisions}
+    \item The JCR may delegate responsibilities to committees and officers as set out in the Standing Orders.
     \item Without prejudice to any indemnity to which any Executive Officer may otherwise be entitled, every Executive member or other officer of the student body shall be indemnified, out of the assets of the student body, against any liability incurred by them in defending any proceedings, whether civil or criminal, in which judgment is given in their favour or in which they are acquitted, or in connection with any application in which relief is granted to them by the court from liability for negligence, default, breach of duty, or breach of trust in relation to the affairs of the students.
     \item The JCR must not censor the speech, writing or other works of its members unless they are grossly offensive, misleading disclosing confidential information, defamatory, illegal, or otherwise likely to result in legal action being against the JCR, except where this is a disclosure of information showing that wrongdoing has been committed, or where the speech is commercial in nature.
+    \item Constitutional Committee must have sufficient independence from the Executive Committee to effectively carry out its scrutiny roles.
 \end{enumerate}
 \newpage
 
@@ -233,16 +259,18 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \item All JCR ballots with more than two options must be conducted using the Single Transferable Vote (STV) system.
     \item The quorum for a ballot is 5\% of the electorate.
     \item Adequate notice must be given to JCR members at each stage of the ballot process.
-    \item Every ballot must have a Senior and Junior Returning Officer who are responsible for ensuring that procedures are carried out correctly.
-    \item The Returning Officers must act impartially and transparently.
+    \item Every ballot must have a Senior Returning Officer, Junior Returning Officer and a Scrutineer (``\textbf{election officials}'') who are responsible for ensuring that procedures are carried out correctly.
     \begin{enumerate}
-        \item A candidate must not act as a Returning Officer for the same election.
+        \item A candidate must not act as an election official for the same election.
+        \item No person may hold two or more election official roles for the same ballot.
     \end{enumerate}
+    \item The election officials must act impartially and transparently.
+    \item The Scrutineer must observe the election to ensure it is conducted fairly and in accordance with the Standing Orders.
     \item The voting period for a ballot must be not shorter than 24 hours.
     \item At the end of the voting period, the Returning Officers must promptly announce the results of the ballot.
     \item A person must not cause a change to the results of a ballot by any action other than the casting of a single lawful vote.
     \begin{enumerate}
-        \item Consequentially:
+        \item Consequently:
         \begin{enumerate}[(a)]
             \item A member must not vote more than once in the same ballot.
             \item The results of a ballot must not be altered by any JCR Officer or Committee.
@@ -250,72 +278,84 @@ Amended in June 2019 by the Alastair Hargreaves-McManus and Sheehan Quirke (JCR 
     \end{enumerate}
     \item A member must not reveal how another member has voted.
     \item To maintain the secrecy of the ballot, a member must not prove to any person how they have voted.
-    \item If a Returning Officer has reasonable suspicion that the Standing Orders have been contravened regarding a ballot, then they must refer the matter to Constitutional Committee.
+    \item Members must not engage in unfair election practices.
+    \begin{enumerate}
+        \item Practices considered unfair include:
+        \begin{enumerate}[(a)]
+            \item Unduly influencing a member to vote or not vote in a certain way;
+            \item Making false statements about a candidate;
+            \item Treating or bribery.
+        \end{enumerate}
+    \end{enumerate}
+    \item If an election official has reasonable suspicion that the Standing Orders have been contravened regarding a ballot, then they must refer the matter to Constitutional Committee.
     \item A ballot may be declared invalid if either the Returning Officers or Constitutional Committee conclude that the Standing Orders have been contravened regarding a ballot and that it is in the interests of democracy to rerun the ballot.
     \item If a ballot is declared invalid, then—
     \begin{enumerate}[(a)]
         \item The result is void.
         \item Constitutional Committee must decide whether the whole ballot process must be restarted or whether only the voting itself must be rerun.
-        \item The Returning Officer must act in accordance with the decision made by Constitutional Committee within a reasonable timeframe.
+        \item The Returning Officers must act in accordance with the decision made by Constitutional Committee within a reasonable timeframe.
     \end{enumerate}
+    \item Executive Officers must act impartially towards candidates during elections.
+    \begin{enumerate}
+        \item They must not offer support or assistance to any candidate without offering the same to all other candidates in the same election.
+    \end{enumerate}
+    \item In all elections ``Re-open Nominations'' (RON) must be included as an option.
 \end{enumerate}
 \newpage
 
 \section{Appointment and Removal of JCR Officers}
 \begin{enumerate}
-    \item All JCR Officers must be appointed in a fair and transparent process.
-    \item All Executive Officers must be elected.
-    \item In all elections “Re-open Nominations” (RON) must be included as an option.
-    \item Members of JCR Committees shall hold office until the end of the academic year in which they are appointed, or for a period as determined by the Committees and Job Description Standing Order.
-    \item Any non-sabbatical Officer of the JCR may stand down from their role by writing to the Executive Committee. The Executive Committee must report this to the next JCR meeting.
-    \item Should a JCR Officer be considered to have fallen short of fulfilment of the duties assigned to them, a quorate JCR meeting may agree a formal warning against that officer.
-    \item Should a JCR Officer continue to fall short of fulfilment of the duties assigned to them following a formal warning, or if the actions of an officer are considered to be serious misconduct, a motion of no confidence must be debated at a JCR meeting and then put to a referendum.
+    \item All officers must be appointed in a fair and transparent process.
+    \item All Executive Officers must be elected with the exception of the Sabbatical Bar Steward.
+    \item A member can only hold one Executive Officer position at a time but can be re-elected to the same position or elected to a different position for a term of office after the end of their current term.
+    \item Members of JCR Committees hold office until the end of the academic year in which they are appointed, unless otherwise stated in the Standing Orders.
+    \item Any non-sabbatical Officer of the JCR may stand down from their role by writing to the President.
     \begin{enumerate}
-        \item If a motion of no confidence is agreed, the officer shall immediately cease to hold their office.
-        \item The Executive Committee may suspend the officer from carrying out their duties until the referendum has been voted on.
+        \item The President must report this to the JCR as soon as appropriate.
     \end{enumerate}
-    \item Any vacancy which arises must be filled at the earliest opportunity by an election conducted in the manner normal for that post. The vacancy shall be filled for the remainder of the original term of office.
+    \item Should an Officer be considered to have fallen short of fulfilment of the duties assigned to them, the JCR may pass a formal warning motion against that Officer.
+    \item Should an Officer continue to fall short of fulfilment of the duties assigned to them following a formal warning, or if the actions of an officer are considered to be serious misconduct, a motion of no confidence must be debated at a JCR meeting and then put to a referendum.
     \begin{enumerate}
-        \item Any officer appointed in this manner shall be eligible to stand for re-election for a full term of office at the normal time should they continue to meet any conditions for election to that role.
+        \item If a motion of no confidence is agreed, the Officer will immediately cease to hold their office.
+        \item The Executive Committee may suspend the Officer from carrying out their duties until the referendum has been voted on.
+        \item This is the only way an elected officer may be removed without their consent.
     \end{enumerate}
-    \item The following special conditions apply to the appointment of sabbatical officers of the JCR:
+    \item Any vacancy which arises must be filled at the earliest opportunity in the manner normal for that post.
+    \item The following special conditions apply to Sabbatical Officers of the JCR:
     \begin{enumerate}
-        \item Candidates for elections for sabbatical positions must be in the final year of their degree.
-        \item A member may only hold sabbatical office for up to two years in total, in accordance with the Education Act 1994 section 22.
-        \item Sabbatical officers may resign from their post by giving written notice of one term to the Executive Committee and the Director of HR of the University.
-        \item If a sabbatical officer is accused of committing a serious offence that falls within the University’s definition of gross misconduct (as set out in the University’s Disciplinary Regulation) the JCR Executive will consider a motion of no confidence.
-        \item In the event of a motion of no confidence in a sabbatical officer, a panel will be convened to consider the case for dismissal from office. The membership of the panel shall be agreed by the members of the JCR Executive Committee in consultation with the Director of HR (or their deputy) of the University.
-        \item Should a sabbatical officer be dismissed from Office they have the right of appeal. The appeal process will be determined by the JCR Executive in consultation with the HR Director of the University (or their deputy).
-        \item Where there is a vacancy for a sabbatical officer, it shall be filled for the remainder of the term of office by a non-sabbatical office elected in the normal manner. An individual appointed in these circumstances shall be eligible to stand for re-election for a full term of office.
+        \item Candidates for Sabbatical Officer positions must be in the final year of their degree or be an incumbent Sabbatical Officer.
+        \item A member may only hold Sabbatical Office for up to two years in total, in accordance with the Education Act 1994 section 22.
+        \item Sabbatical Officers may resign from their post in accordance with their contract of employment.
+        \item If a Sabbatical Officer is accused of misconduct, this must be reported to the Board of Trustees.
+        \item Where there is an extraordinary vacancy for a Sabbatical Officer position, a student may be elected to the position for the remainder of the term of office.
     \end{enumerate}
-    \item Following informal discussions, if a member considers that there has been misconduct by the JCR President the matter should be discussed with the JCR Chair who must consult with the JCR Executive Committee (other than the President).
-    \item Where more than one member of the JCR Executive Committee (excluding the Chair) considers that there may be a case of misconduct by the JCR President, the matter must be discussed with the Head of College.
-    \item Following discussion with the Head of College (and where necessary with the Director of HR of the University), if the JCR Executive Committee consider that there has been misconduct, but that misconduct falls short of gross misconduct as defined by the University Regulations, the Executive Committee must implement an appropriate remedy (that complies with the Standing Orders) and report this to the JCR. This may include a vote of no confidence in the President.
-    \item Following discussion with the Head of College and the Director of HR, if the JCR Executive Committee consider that there has been gross misconduct as defined by the University Regulations, the JCR must have a vote of no confidence in the President.
+    \item External Trustees may also be subject to motions of no confidence.
+    \item Trustees and Sabbatical Officers have right of appeal against removal in accordance with the Governing Document.
 \end{enumerate}
 \newpage
 
 \section{JCR Finances}
 \begin{enumerate}
-    \item The JCR President has overall responsibility for the JCR’s finances and for ensuring that the JCR remains in a sound financial position.
-    \item The JCR FACSO is responsible to the JCR President for the financial transactions of the JCR and must advise the JCR President and the Executive Committee on financial matters.
-    \item The JCR FACSO is responsible for the preparation of the JCR budget and accounts and for liaising with the Colleges Accounts Team and the Head of College as appropriate.
-    \item Other JCR officers may be delegated specific financial responsibilities. Their work will be overseen by the FACSO.
-    \item The JCR Treasury Committee has the power to intervene in the running of a JCR Committee or Society account if they are making a financial loss or if there is reasonable suspicion of misuse of funds.
-    \item The JCR Financial Auditing Committee must have access to all financial documents of the JCR.
+    \item The trustees are responsible to the JCR for ensuring that the JCR remains in a sound financial position.
+    \item The FACSO is responsible for the financial transactions of the JCR and must advise the President and the Executive Committee on financial matters.
+    \item The FACSO is responsible for the preparation of the JCR budget and accounts and for liaising with the University on these as required.
+    \item Other officers or members of Treasury Committee may be delegated specific financial responsibilities overseen by the FACSO.
+    \item The Treasury Committee has the power to intervene in the running of a JCR Committee or Society account if they are making a financial loss or if there is reasonable suspicion of misuse of funds.
+    \item The Financial Auditing Committee must have access to all financial documents of the JCR.
 \end{enumerate}
 \newpage
 
 \section{Resolution of Issues}
 \begin{enumerate}
-    \item Members of the JCR should attempt to resolve issues by informal discussion before following the formal procedures for resolution of issues. 
-    \item Any matter which may represent a criminal act must be reported by the JCR President or JCR Chair to the Head of College who shall liaise with the Registrar.
-    \subsection*{Appealing a Decision of the JCR}
-    \item If a member of the JCR wishes to appeal against a decision of the JCR (or one of its committees or officers) they may do so by writing to the JCR Chair to request the decision be considered at a JCR meeting.
-    \item If, following consideration by the JCR, a member considers that the final decision of the JCR unfairly disadvantages a member or group of members they may raise the matter in writing with the Head of the College, who shall take reasonable steps to resolve the matter. Should this not prove possible, the matter will be referred to the College Council for final resolution.
-    \subsection*{Alleged Misconduct by a JCR Member}
-    \item If a member considers that there has been misconduct by a member or members of the JCR (while participating in JCR activities), the matter should be discussed with either the JCR President or the JCR Chair. The JCR President or Chair may consult with the Executive Committee if this is considered by the JCR President or Chair to be an appropriate course of action.
-    \item Where the JCR President or JCR Chair determines that a breach of the JCR Standing Orders or policy has occurred, they must implement an appropriate remedy (that complies with the Standing Orders), consulting with Constitutional Committee and, where appropriate, Executive Committee.
-    \item Where the JCR President or JCR Chair consider that the misconduct may represent a breach of College or University Regulations, the matter must be raised in writing with the Head of College who shall take appropriate action.
+    \item Members of the JCR should attempt to resolve issues by informal discussion before following the formal procedures for resolution of issues.
+    \subsection{Appealing a decision of the JCR}
+    \item If a member of the JCR wishes to appeal against a decision of the JCR (or one of its committees or officers) they may do so by writing to the Chair to request the decision be reviewed by the Executive Committee.
+    \item If a member is unhappy with the outcome of a review, they may appeal to the Board of Trustees.
+    \subsection{Alleged misconduct by a JCR member}
+    \item If a JCR Officer reasonably believes that a member has committed misconduct while participating in JCR activities or otherwise of interest to the JCR, then they must report this to the President or the Chair.
+    \item The President and Chair must record and respond to reports of misconduct appropriately.
+    \item Any matter which may represent a criminal act must be reported by the President or Chair to the Head of College and the Board of Trustees.
+    \item Members must not unreasonably obstruct investigations of alleged misconduct.
+    \item Where the JCR President or JCR Chair determines that a breach of the JCR Standing Orders or policy has occurred, they must implement an appropriate remedy (that complies with the Standing Orders), consulting with Constitutional Committee and, where appropriate, Executive Committee and/or Board of Trustees.
 \end{enumerate}
 \end{document}
