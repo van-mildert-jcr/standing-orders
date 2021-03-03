@@ -1,0 +1,19 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mildert}[2020/03/03 Preamble for VMJCR Standing Orders]
+
+\usepackage{mildert-common}
+
+\setlength{\parindent}{0pt}  % Disable indentation at start of paragraphs
+\setlength{\parskip}{1em}  % Paragraph spacing
+\renewcommand{\arraystretch}{1.5}  % Table padding
+
+% Numbering
+\usepackage{enumerate} % Lets us customise list styles
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{\thesection.\arabic{enumi}.}  % Section number followed by item number for clauses
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi\arabic{enumii}.}  % Subclauses
+% Disable subsection numbering
+\usepackage{titlesec} % Lets us customise title styles
+\renewcommand{\thesubsection}{} % Remove number
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{} % Fix spacing caused by removing number

@@ -1,0 +1,17 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mildert-common}[2020/03/03 Common preamble for VMJCR Standing Orders and appendices]
+
+\usepackage[utf8]{inputenc}  % Set encoding to Unicode
+\usepackage[T1]{fontenc}  % Use modern font encoding
+\usepackage[
+    hidelinks, % Don't put boxes around links etc
+    pdfusetitle, % Use LaTeX fields to fill PDF metadata
+    pdflang={en-GB} % Set language (for accessibility)
+]{hyperref} % Handles PDF stuff including links/table of contents
+\renewcommand{\familydefault}{\sfdefault}  % Use sans serif font
+\usepackage{graphicx}  % To include coat of arms
+\graphicspath{ {./} }  % Graphics in same folder as this file
+\usepackage[margin=1.2in]{geometry}  % Margins
+
+\hyphenpenalty=10000  % Prevent hyphenation (LaTeX can be a bit overzealous)
+\emergencystretch \textwidth  % Fix spacing issues caused by lack of hyphenation

@@ -1,31 +1,6 @@
 % Set font size to 12; article is default LaTeX doc type and meets our purposes
 \documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}  % Set encoding to Unicode
-\usepackage[
-    hidelinks, % Don't put boxes around links etc
-    pdfusetitle, % Use LaTeX fields to fill PDF metadata
-    pdflang={en-GB} % Set language (for accessibility)
-]{hyperref} % Handles PDF stuff including links/table of contents
-\renewcommand{\familydefault}{\sfdefault}  % Use sans serif font
-\usepackage{graphicx}  % To include coat of arms
-\graphicspath{ {./} }  % Graphics in same folder as this file
-\setlength{\parindent}{0pt}  % Disable indentation at start of paragraphs
-\setlength{\parskip}{1em}  % Paragraph spacing
-\usepackage[margin=1.2in]{geometry}  % Margins
-\renewcommand{\arraystretch}{1.5}  % Table padding
-\hyphenpenalty=10000  % Prevent hyphenation (LaTeX can be a bit overzealous)
-\emergencystretch \textwidth  % Fix spacing issues caused by lack of hyphenation
-% Numbering
-\usepackage{enumerate} % Lets us customise list styles
-\renewcommand{\labelenumi}{\theenumi}
-\renewcommand{\theenumi}{\thesection.\arabic{enumi}.}  % Section number followed by item number for clauses
-\renewcommand{\labelenumii}{\theenumii}
-\renewcommand{\theenumii}{\theenumi\arabic{enumii}.}  % Subclauses
-% Disable subsection numbering
-\usepackage{titlesec} % Lets us customise title styles
-\renewcommand{\thesubsection}{} % Remove number
-\titleformat{\subsection}{\normalfont\large\bfseries}{}{0pt}{} % Fix spacing caused by removing number
-
+\usepackage{mildert}
 
 \title{Operational Standing Orders}
 \author{Van~Mildert~College Junior~Common~Room}
