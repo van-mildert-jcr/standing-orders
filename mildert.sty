@@ -9,10 +9,11 @@
 
 % Numbering
 \usepackage{enumerate} % Lets us customise list styles
-\renewcommand{\labelenumi}{\theenumi}
-\renewcommand{\theenumi}{\thesection.\arabic{enumi}.}  % Section number followed by item number for clauses
-\renewcommand{\labelenumii}{\theenumii}
-\renewcommand{\theenumii}{\theenumi\arabic{enumii}.}  % Subclauses
+\renewcommand{\theenumi}{\thesection.\arabic{enumi}}  % Section number followed by item number for clauses
+\renewcommand{\theenumii}{.\arabic{enumii}}  % Subclauses prefix with . to appear correct with \ref
+\renewcommand{\labelenumi}{\theenumi.} % Terminate clause number label with .
+\renewcommand{\labelenumii}{\theenumi\theenumii.}
+
 % Disable subsection numbering
 \usepackage{titlesec} % Lets us customise title styles
 \renewcommand{\thesubsection}{} % Remove number
