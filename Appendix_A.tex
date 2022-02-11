@@ -30,12 +30,12 @@
     \section*{The Academic Year}
     The academic year runs from 1st August to 31st July.\\
     \begin{tikzpicture}
-        \foreach \x in {2,4.5,5.7,8.2,9.5,12} {\draw (\x,.3) -- (\x,-.3);} % ticks
         % terms
         \foreach \x/\term in {2/Michaelmas,5.7/Epiphany,9.5/Easter} {
             \draw [red,line width=10] (\x,0) -- +(2.5,0)
                 node [black,midway,above=5,text depth=0] {\term\ Term};
         }
+        \foreach \x in {2,4.5,5.7,8.2,9.5,12} {\draw (\x,.3) -- (\x,-.3);} % ticks
         \draw[ultra thick, ->] (0,0) -- (14,0); % axis
 
         \draw[ultra thick,green] (13.5,-.3) -- (13.5,.3)
