@@ -1,5 +1,7 @@
 *
-!*.tex
+!**/*.tex
 !arms.png
-!*.md
-!*.sty
+!**/*.md
+!**/*.sty
+!**/latexmkrc
+!*/

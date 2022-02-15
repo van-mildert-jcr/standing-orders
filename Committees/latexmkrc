@@ -1,0 +1,3 @@
+# Include parent directory
+$MSWin_back_slash=0;
+ensure_path('TEXINPUTS', '../');
