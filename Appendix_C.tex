@@ -1,10 +1,16 @@
 \documentclass[12pt]{article}
 \usepackage{mildert-common}
 \usepackage{enumerate}
+% For making the timeline:
+\usepackage{pgffor}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,positioning}
+\usepackage{adjustbox}
 
 \title{Appendix C: Election Candidate Guidance}
 \author{Van~Mildert~College Junior~Common~Room}
-\date{26th June 2020}
+\newcommand{\thedate}{2nd February 2022}
+\date{\thedate}
 
 \begin{document}
     \begin{titlepage}  % Title page
@@ -17,65 +23,95 @@
     \end{titlepage}
     \setcounter{page}{2}  % Correct page numbering
 
-    This appendix is advisory only; the Standing Orders provide the authoritative election rules.
+    The Standing Orders provide the authoritative election procedure; Appendix C is supplementary to the Standing Orders.
+
+    \setcounter{section}{-1}
+    \section{Typical election timescale}
+    \begin{adjustbox}{width=\textwidth} % scale so we can have {1 unit = 1 day} on the axis
+    \begin{tikzpicture}[every node/.style={scale=1.2,text depth=0}]
+        \node [label=right:Voting period,draw,fill=red] (key0) at (0,-2) {};
+        \foreach \s/\e/\c/\n [count=\i,remember=\i as \j] in {0/7/orange/Pre-election,7/14/cyan/Nomination,14/23/green/Campaign} {
+            \draw [\c,fill,line width=0] (\s,0) rectangle (\e,.5); % period highlighting
+            \node [label=right:\n\ period,draw,fill=\c,below of=key\j] (key\i) {};
+        }
+        \draw [red,fill,line width=0] (21,0.27) rectangle (23, 0.5); % voting period
+        \draw[ultra thick,black,decorate,decoration={brace}] (14.1,.6) -- (20.9,.6) node [black,midway,above] {Hustings};
+        \draw[gray, ultra thick, ->] (0,0) -- (23.5,0); % axis
+        \foreach \x/\e in {0/Announcement of Election,7/Nominations Open,14/Nominations Close,21/Voting Opens,23/Results Announced} {
+            \draw[gray, thick] (\x,.5) -- (\x,-.5) node [black,below,at end] (day\x) {\x}; % ticks and day number
+            \draw[black, ultra thick, ->] (\x,2.0) -- (\x,0.2) node [black,above=.5,at start,text centered,text width=66] {\e};
+        }
+        \node [left=.1 of day0] {Day:};
+    \end{tikzpicture}
+    \end{adjustbox}
 
     \section{Standing}
-    Before a member makes the decision to stand, they should speak to the current holder(s) of the position. They should also speak to the Chair or President about the election procedure.
-
-    Executive Officers must no show bias to any candidate.
-
+    \begin{itemize}
+        \item All JCR members are entitled to stand in an election. However, you must be a finalist to be eligible for a sabbatical role.
+        \item Before standing for a position, you should speak to the incumbent, JCR President, or JCR Chair.
+        \item Candidates standing for JCR President and Senior Welfare Officer must meet with College Officers.
+        \begin{itemize}
+            \item They must contact the Senior Returning Officer to organise this before nominations open.
+        \end{itemize}
+    \end{itemize}
 
     \section{Nominations}
-    Before the close of the nominations period, a candidate must submit their nomination including the names of a proposer and a seconder, and a manifesto to the returning officer (normally the Chair).
+    \begin{itemize}
+        \item To stand in an election, candidates must send their nomination to the Senior Returning Officer during the nomination period. The nomination must include:
+        \begin{itemize}
+            \item An A4 manifesto;
+            \item Names of a Proposer and Seconder, who must be JCR members and not Executive Officers (past or present);
+            \item For sabbatical roles, an A4 policy document.
+        \end{itemize}
+    \end{itemize}
 
-    The proposer and seconder must be JCR members and must not be or have been Executive Officers.
-
-    This manifesto must be one side of A4. They may also submit a plain text accessible version.
-
-    Nominations for a sabbatical role must also include a policy page (again one side of A4).
-
-    Candidates for a sabbatical role must be finalists.
-
-    Candidates for President or Senior Welfare Officer must also meet with College Officers.
+    \section{Campaigning}
+    \begin{itemize}
+        \item During the campaign period, candidates standing in the election have the opportunity to campaign in-person and online.
+        \item Only the candidate standing in the election, their proposer, and their seconder may campaign for the candidate (e.g. asking people to vote for the candidate).
+        \item You must not unduly influence members to vote in a certain way or not to vote.
+        \item All campaigning must follow the below guidance.
+    \end{itemize}
+    \subsection{In-person}
+    \begin{itemize}
+        \item In-person campaigning must take place during the campaign period and before the voting period.
+        \item A candidate may campaign in-person for up to 4.5 hours, and their proposer/seconder may accompany them.
+        \item A candidate must only campaign in-person in communal areas of College; i.e. areas that any member can access and not accommodation blocks.
+        \item A candidate must tell the Senior Returning Officer the times, dates, and locations of their in-person campaigning.
+        \item A candidate may advertise when they will be campaigning in-person through personal social media accounts.
+        \item The Senior Returning Officer will organise the printing of manifestos to be displayed in College toilets.
+        \item If in-person campaigning is not possible (due to serious adverse circumstances), the Election Officers may provide suitable alternatives.
+    \end{itemize}
+    \subsection{Online}
+    \begin{itemize}
+        \item A candidate may post their manifesto on personal social media accounts.
+        \item A candidate’s proposer and seconder may also post the candidate’s manifesto on their social media accounts.
+    \end{itemize}
 
     \section{Hustings}
-    Candidates must take part in hustings at a JCR meeting. This can be done by video call if necessary.
+    \begin{itemize}
+        \item The election hustings will take place at a JCR meeting during the campaign period and
+        before voting opens.
+        \item All candidates standing for election must take part in the hustings.
+        \item Candidates for President must prepare a 3-minute campaign video to played at the
+        hustings.
+        \begin{itemize}
+            \item The video must be sent to the Head of Governance Committee 48 hours before the hustings.
+        \end{itemize}
+        \item Each prosper must give a one-minute speech followed by the candidate giving a two minute speech.
+        \item Each candidate must sing a song, perform a poem or tell a joke. This may be done with their proposer and/or seconder. This will be followed by campaign videos for Presidential candidates.
+        \item Each candidate may ask one question; followed by questions from incumbents, Executive Officers, and then any other members.
+        \item All candidates may respond to questions addressed at individual candidates.
+        \item After questions, Presidential candidates may make a final concise statement.
+    \end{itemize}
 
-    Candidates for President must prepare a campaign video. This video must be approved by Governance Committee prior to the hustings and will be published by the JCR after the hustings.
-
-    \begin{enumerate}
-        \item Each proposer must give a one minute speech followed by the candidate giving a two minute speech.
-        \item Each candidate must sing a song, perform a poem \emph{or} tell a joke. This may be done with their proposer and/or seconder.
-        \item Presidential candidates' videos are played.
-        \item Each candidate may each ask one question.
-        \item The incumbent may ask questions.
-        \item Questions will be taken from the floor.
-        \item Candidates may then ask further questions at the discretion of the Chair.
-        \item Presidential candidates may make some final concise comments.
-        \item If there is a statement for RON, this is read by the Chair or the permitted member.
-    \end{enumerate}
-
-    All candidates may respond to questions addressed at an individual candidate.
-
-    \section{Canvassing}
-    Candidates may canvass on up to three days totalling 4.5 hours, monitored by Governance Committee.
-
-    Campaigning on behalf of candidates or potential candidates for election is forbidden.
-
-    \section{Manifestos}
-    The Senior Returning Officer will print manifestos for each candidate and publish them on the JCR Facebook group. Candidates must only place their manifestos in the bar toilets and the communal residential block toilets excluding Deerness (note: Tunstall does not have any communal toilets).
-
-    \section{Voting}
-    Voting is conducted using the online voting system provided by the University.
-    The voting period is set by the Senior Returning Officer and will be between 24 and 168 hours.
-
-    Candidates should not unreasonably hassle members to vote and must not loiter by the voting station.
-
-    A member must not reveal how another member has voted.
-
-    \section{Results}
-    After the close of voting, the Returning Officers will count the votes and announce the results on the stairs outside the bar/JCR.
-
-    Successful Presidential candidates traditionally perform a \emph{Kazoo}.
-
+    \section{Voting and results}
+    \begin{itemize}
+        \item Voting is carried out during the voting period, which is between 24 and 168 hours, via the University's online voting system.
+        \item A voting station may be set up and monitored by the Election Officers during the voting period.
+        \item A member must not reveal how another member has voted.
+        \item At the end of the voting period, the Election Officers will count the votes.
+        \item The results will be announced on the stairs outside the bar. They should also be announced via an email to members and a post in the college Facebook group.
+        \item Successful Presidential candidates traditionally perform a Kazu\footnote{A Kazu involves the candidate kicking a full can of Coca-Cola down the stairs in the foyer, throwing it over their head three times, and then opening it over their head.}.
+    \end{itemize}
 \end{document}
