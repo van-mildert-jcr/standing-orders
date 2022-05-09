@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage{mildert}
+
+\newenvironment{steps}{\begin{enumerate}[1.]}{\end{enumerate}}
+
+\title{Appendix J: Single Transferable Vote}
+\author{Van~Mildert~College Junior~Common~Room}
+\newcommand{\thedate}{6th May 2022}
+\date{\thedate}
+\begin{document}
+\begin{titlepage}  % Title page
+    \maketitle
+    \begin{figure}[h]
+        \includegraphics[scale=0.25]{arms}  % Coat of arms
+        \centering
+    \end{figure}
+    \thispagestyle{empty}
+\end{titlepage}
+\setcounter{page}{2}  % Correct page numbering
+This appendix sets out the procedure for counting votes in JCR elections using the Single Transferable Vote (STV) system.
+
+\emph{This procedure is based on that in Schedule 1 of The Scottish Local Government Elections Order 2011.}
+
+\section{Conduct}
+\begin{enumerate}
+    \item The returning officers may use an electronic counting system that complies with the procedure set out in this appendix, so long as such a system can be verified by examination of its source code to be correct.
+\end{enumerate}
+
+
+\section{Quotas}
+\begin{enumerate}
+    \item The quota used is the Droop quota.
+    \item The Droop quota is calculated as follows in formula \ref{droop}:
+    \begin{equation}\label{droop}
+        \left\lfloor\frac{v}{p+1}\right\rfloor+1
+    \end{equation}
+    where:
+    \begin{itemize}
+        \item \textit{v} is the total number of votes cast;
+        \item \textit{p} is the number of positions available; and
+        \item \(\lfloor x\rfloor\) is the \emph{floor function} (rounding down to the nearest integer).
+    \end{itemize}
+    \item However, in an uncontested election, the quota for RON is calculated as follows in formula \ref{ron}:
+    \begin{equation}\label{ron}
+        \left\lceil0.33 \times v\right\rceil
+    \end{equation}
+    where:
+    \begin{itemize}
+        \item \textit{v} is the total number of votes cast; and
+        \item \(\lceil x\rceil\) is the \emph{ceiling function} (rounding up to the nearest integer).
+    \end{itemize}
+\end{enumerate}
+
+
+\section{Counting}
+\begin{enumerate}
+    \item In each round, the returning officers must:
+    \begin{steps}
+        \item Count and record the total number of votes.
+        \item Count and record the number of votes held by each candidate.
+        \item Calculate and record the quota.
+        \item If the number of votes for a candidate equals or exceeds the quota, then the candidate is deemed to be elected.
+        \item If no further vacancies remain, then the count is concluded.
+        \item The votes of any candidates elected in the round are redistributed.
+        \item If no candidate was elected in the round, the candidate with the lowest number of votes is excluded and their votes redistributed.
+    \end{steps}
+    \subsection{Values}
+    \item Vote values must be calculated to five decimal places, with any remainder being ignored.
+    \item Each vote starts the count with a value of \(1.00000\).
+    \item When a candidate is elected, each of their votes must be assigned a new value, prior to transfer, calculated according to formula \ref{value}:
+    \begin{equation}\label{value}
+        \frac{s\times v}{t}
+    \end{equation}
+    where:
+    \begin{itemize}
+        \item \textit{s} is the surplus of the excluded candidate;
+        \item \textit{v} is the current value of the vote; and
+        \item \textit{t} is the total number of votes held by the excluded candidate.
+    \end{itemize}
+    \item For the avoidance of doubt, where this procedure refers to ``number of votes'', it means the sum of the values of the votes.
+    \subsection{Redistribution}
+    \item When votes are redistributed, they are transferred to the continuing candidate for whom the next available preference is given, or removed from the count if no such candidate or preference exists.
+    \item If at the end of a round more than one candidate is elected, the ballot papers of the candidate with the largest surplus are redistributed first.
+    \subsection{Tie-breaking}
+    \item If at any point during the count, two or more candidates have the same number of votes and the procedure does not allow for this, the tie must be broken by random selection.
+\end{enumerate}
+
+
+\section{Results}
+\begin{enumerate}
+    \item The returning officers must report the following the following details of each round of counting:
+    \begin{enumerate}[(a)]
+        \item The total number of votes;
+        \item The quota;
+        \item The number of votes held by each candidate;
+        \item The names of any candidates elected; and
+        \item The names of any candidates excluded.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
